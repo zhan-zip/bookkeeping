@@ -1,0 +1,22 @@
+# 文档：只本地保留，严禁上传 GitHub
+docs/
+
+# 依赖
+node_modules/
+dist/
+build/
+
+# 环境与敏感信息
+.env
+.env.*
+*.local
+
+# 系统与编辑器
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
+
+# 数据
+data/expenses.json
