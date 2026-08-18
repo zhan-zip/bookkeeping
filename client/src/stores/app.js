@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 import * as api from '@/api/storage'
+import { setToken as setGithubToken } from '@/api/github'
 
 export const useAppStore = defineStore('app', () => {
   const token = ref('')
@@ -17,11 +18,15 @@ export const useAppStore = defineStore('app', () => {
   function setToken(t) {
     token.value = t
     localStorage.setItem('github_token', t)
+    setGithubToken(t)
   }
   
   function loadToken() {
     const saved = localStorage.getItem('github_token')
-    if (saved) token.value = saved
+    if (saved) {
+      token.value = saved
+      setGithubToken(saved)
+    }
   }
   
   function clearError() {
@@ -44,79 +49,19 @@ export const useAppStore = defineStore('app', () => {
     }
   }
   
-  async function addExpense(amount, category, note, type = 'expense', date = null) {
-    clearError()
-    try {
-      const record = await api.addExpense(amount, category, note, type, date)
-      await fetchAll()
-      return record
-    } catch (e) {
-      error.value = e.message
-      throw e
-    }
-  }
-  
-  async function addWish(name, price) {
-    clearError()
-    try {
-      const item = await api.addWish(name, price)
-      wishlist.value = await api.getWishlist()
-      return item
-    } catch (e) {
-      error.value = e.message
-      throw e
-    }
-  }
-  
-  async function buyWish(wishId, category, note) {
-    clearError()
-    try {
-      const result = await api.buyWish(wishId, category, note)
-      await fetchAll()
-      return result
-    } catch (e) {
-      error.value = e.message
-      throw e
-    }
-  }
-  
-  async function deleteExpense(expenseId) {
-    clearError()
-    try {
-      await api.deleteExpense(expenseId)
-      await fetchAll()
-    } catch (e) {
-      error.value = e.message
-      throw e
-    }
-  }
-  
-  async function updateExpense(expenseId, updates) {
-    clearError()
-    try {
-      await api.updateExpense(expenseId, updates)
-      await fetchAll()
-    } catch (e) {
-      error.value = e.message
-      throw e
-    }
-  }
-  
-  async function ensureAllowance() {
-    clearError()
-    try {
-      const result = await api.ensureMonthlyAllowance()
-      await fetchAll()
-      return result
-    } catch (e) {
-      error.value = e.message
-      throw e
-    }
-  }
-  
   async function refreshMonth() {
     monthlySummary.value = await api.getMonthSummary()
     categoryStats.value = await api.getCategoryStats()
+  }
+  
+  async function getMonthlyReport() {
+    clearError()
+    try {
+      return await api.getMonthlyReport()
+    } catch (e) {
+      error.value = e.message
+      throw e
+    }
   }
   
   return {
@@ -132,12 +77,7 @@ export const useAppStore = defineStore('app', () => {
     setToken,
     loadToken,
     fetchAll,
-    addExpense,
-    addWish,
-    buyWish,
-    deleteExpense,
-    updateExpense,
-    ensureAllowance,
     refreshMonth,
+    getMonthlyReport,
   }
 })
