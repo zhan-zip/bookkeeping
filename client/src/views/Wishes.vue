@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 import { useAppStore } from '@/stores/app'
 
 const store = useAppStore()
@@ -50,11 +50,12 @@ async function confirmBuy() {
 }
 
 function formatMoney(n) {
+  if (n == null || isNaN(n)) return '¥0.00'
   return '¥' + n.toFixed(2)
 }
 
 const totalPrice = computed(() => 
-  store.wishlist.reduce((sum, w) => sum + w.price, 0)
+  (store.wishlist || []).reduce((sum, w) => sum + (w.price || 0), 0)
 )
 </script>
 
