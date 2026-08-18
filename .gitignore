@@ -18,5 +18,11 @@ Thumbs.db
 .vscode/
 *.log
 
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
 # 数据
 data/expenses.json
