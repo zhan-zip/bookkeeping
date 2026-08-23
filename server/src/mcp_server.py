@@ -1,4 +1,5 @@
 import os
+import re
 import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -11,6 +12,91 @@ from src.storage import (
 from src.models import ExpenseType, CATEGORIES
 
 mcp = FastMCP("Bookkeeping MCP Server")
+
+CATEGORY_KEYWORDS = {
+    "技术": ["技术", "服务器", "域名", "订阅", "api", "ai", "cursor", "chatgpt", "github", "云"],
+    "学习": ["书", "教材", "笔记本", "笔", "课", "学习", "考试", "证书"],
+    "吃饭": ["饭", "午饭", "晚饭", "早饭", "早餐", "午餐", "晚餐", "食堂", "餐厅", "面", "米饭", "菜"],
+    "零食": ["奶茶", "咖啡", "饮料", "零食", "薯片", "巧克力", "糖", "冰淇淋", "蛋糕", "甜品"],
+    "购物": ["买", "淘宝", "京东", "拼多多", "键盘", "鼠标", "耳机", "手机", "电脑", "衣服", "鞋", "包"],
+    "生活": ["洗发水", "沐浴露", "牙膏", "纸巾", "洗衣液", "生活用品", "日用品"],
+    "社交": ["聚餐", "ktv", "电影", "游戏", "朋友", "社交", "请客", "红包"],
+    "出行": ["打车", "滴滴", "高铁", "飞机", "地铁", "公交", "油", "停车", "出行"],
+}
+
+EXPENSE_TYPE_KEYWORDS = {
+    "income": ["收入", "工资", "生活费", "兼职", "奖金", "红包", "转账"],
+    "aa_advance": ["垫付", "帮付", "先付", "aa垫付"],
+    "aa_return": ["回款", "还钱", "报销", "aa回款", "收到"],
+}
+
+def parse_expense_text(text: str) -> dict:
+    """解析自然语言记账文本，返回结构化数据"""
+    text = text.strip()
+    if not text:
+        return {"error": "空文本"}
+    
+    # 提取金额
+    amount_match = re.search(r'(\d+(?:\.\d+)?)', text)
+    if not amount_match:
+        return {"error": "未识别到金额"}
+    amount = float(amount_match.group(1))
+    
+    # 去除金额部分，剩余文本用于推断分类和备注
+    remaining = text[:amount_match.start()] + text[amount_match.end():]
+    remaining = re.sub(r'[元块钱]', '', remaining).strip()
+    
+    # 判断收支类型
+    expense_type = "expense"
+    for etype, keywords in EXPENSE_TYPE_KEYWORDS.items():
+        if any(kw in text for kw in keywords):
+            expense_type = etype
+            break
+    
+    # 推断分类
+    category = "吃饭"  # 默认
+    matched_cat = None
+    for cat, keywords in CATEGORY_KEYWORDS.items():
+        if any(kw in text for kw in keywords):
+            matched_cat = cat
+            break
+    if matched_cat:
+        category = matched_cat
+    elif expense_type == "income":
+        category = "生活费"
+    
+    # 生成备注（去除金额、分类关键词后的剩余文本）
+    note = remaining
+    if not note:
+        note = "记账"
+    
+    # 处理特殊格式："买键盘499购物" -> note="键盘", category="购物"
+    buy_match = re.match(r'买(.+?)(\d+(?:\.\d+)?)(.*)', text)
+    if buy_match:
+        item = buy_match.group(1).strip()
+        category = "购物"
+        note = item or "购物"
+    
+    return {
+        "amount": amount,
+        "category": category,
+        "note": note[:50],  # 限制长度
+        "expense_type": expense_type,
+        "confidence": 0.8 if matched_cat else 0.5,
+    }
+
+
+@mcp.tool()
+def parse_expense_text_tool(text: str) -> dict:
+    """解析自然语言记账文本，返回结构化数据供确认
+    
+    Args:
+        text: 自然语言文本，如 "午饭25"、"买键盘499购物"、"收到生活费2000"
+    
+    Returns:
+        解析结果：amount, category, note, expense_type, confidence
+    """
+    return parse_expense_text(text)
 
 
 @mcp.tool()

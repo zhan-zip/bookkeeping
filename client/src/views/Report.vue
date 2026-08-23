@@ -1,13 +1,16 @@
 <script setup>
-import { ref, onMounted, computed } from 'vue'
+import { ref, onMounted, computed, nextTick } from 'vue'
 import { useAppStore } from '@/stores/app'
 import * as echarts from 'echarts'
+import html2canvas from 'html2canvas'
 
 const store = useAppStore()
 const chartDom = ref(null)
 const chart = ref(null)
+const reportContainer = ref(null)
 const report = ref(null)
 const loading = ref(false)
+const generatingImage = ref(false)
 
 onMounted(() => {
   if (store.isAuthenticated) {
@@ -19,6 +22,7 @@ async function loadReport() {
   loading.value = true
   try {
     report.value = await store.getMonthlyReport()
+    await nextTick()
     if (chartDom.value) initChart()
   } catch (e) {
     alert(e.message)
@@ -68,6 +72,27 @@ function updateChart() {
   })
 }
 
+async function generateImage() {
+  if (!reportContainer.value) return
+  generatingImage.value = true
+  try {
+    const canvas = await html2canvas(reportContainer.value, {
+      scale: 2,
+      useCORS: true,
+      logging: false,
+      backgroundColor: '#ffffff',
+    })
+    const link = document.createElement('a')
+    link.download = `月报-${report.value.month}.png`
+    link.href = canvas.toDataURL('image/png')
+    link.click()
+  } catch (e) {
+    alert('生成失败: ' + e.message)
+  } finally {
+    generatingImage.value = false
+  }
+}
+
 function formatMoney(n) {
   return '¥' + (n || 0).toFixed(2)
 }
@@ -78,8 +103,13 @@ function getBalanceClass(balance) {
 </script>
 
 <template>
-  <div class="container">
-    <h1 class="page-title">月报</h1>
+  <div class="container" ref="reportContainer">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+      <h1 class="page-title" style="margin:0;">月报</h1>
+      <button v-if="report" class="btn btn-primary" @click="generateImage" :disabled="generatingImage" style="padding:8px 16px; font-size:14px; min-height:40px;">
+        {{ generatingImage ? '生成中...' : '生成图片' }}
+      </button>
+    </div>
     
     <div v-if="!store.isAuthenticated" class="card" style="text-align:center; padding:40px 20px;">
       <p style="margin-bottom:16px; color:var(--color-text-secondary);">请先在设置中配置 GitHub Token</p>

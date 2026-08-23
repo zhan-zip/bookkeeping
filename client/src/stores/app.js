@@ -13,6 +13,33 @@ export const useAppStore = defineStore('app', () => {
   const error = ref(null)
   const budgets = ref({})
   
+  function loadBudgets() {
+    const saved = localStorage.getItem('bookkeeping_budgets')
+    if (saved) {
+      try {
+        budgets.value = JSON.parse(saved)
+      } catch {}
+    }
+  }
+  
+  function saveBudgets() {
+    localStorage.setItem('bookkeeping_budgets', JSON.stringify(budgets.value))
+  }
+  
+  function setBudget(category, limit) {
+    if (limit > 0) {
+      budgets.value[category] = Number(limit)
+    } else {
+      delete budgets.value[category]
+    }
+    saveBudgets()
+  }
+  
+  function removeBudget(category) {
+    delete budgets.value[category]
+    saveBudgets()
+  }
+  
   const isAuthenticated = computed(() => !!token.value)
   
   function setToken(t) {
@@ -27,6 +54,7 @@ export const useAppStore = defineStore('app', () => {
       token.value = saved
       setGithubToken(saved)
     }
+    loadBudgets()
   }
   
   function clearError() {
@@ -79,5 +107,7 @@ export const useAppStore = defineStore('app', () => {
     fetchAll,
     refreshMonth,
     getMonthlyReport,
+    setBudget,
+    removeBudget,
   }
 })
