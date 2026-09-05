@@ -11,7 +11,7 @@
 
 ## 0. 一页速览（给对接方 AI 的摘要）
 
-- 这是一个 **MCP Server（stdio 模式）**，用 `fastmcp` 实现，把"记账系统"的能力暴露成 13 个工具。
+- 这是一个 **MCP Server（stdio 模式）**，用 `fastmcp` 实现，把"记账系统"的能力暴露成 16 个工具。
 - 机器人项目把它作为 MCP Server 挂载到 agent 上，**用户对机器人说一句话，agent 通过调用这些工具完成记账/查询**。
 - 数据**不是**存在机器人这边，而是存在 GitHub 仓库的 JSON 文件里（`data/expenses.json` / `data/wishlist.json`），MCP server 内部通过 GitHub Contents API 读写，**机器人项目不需要也不应该直接操作数据文件**。
 - 机器人侧拿到的是**写权限 token**（存 `.env`），与手机 PWA 不同。**token 只放服务器环境变量，绝不进入机器人对话上下文或前端。**
@@ -160,7 +160,7 @@ python server/src/mcp_server.py
 
 ---
 
-## 4. 工具完整契约（13 个）
+## 4. 工具完整契约（16 个）
 
 > 说明：以下"错误"是指 MCP 调用层面返回的错误结构/异常，agent 应识别到并调整输入，而不是当成系统故障。
 > 所有工具名以 `_tool` 结尾，**这是封装层**；原始 `storage.py` 函数名不要直接调。
@@ -350,11 +350,11 @@ python server/src/mcp_server.py
   - `expense_type: string`（可选，`expense/income/aa_advance/aa_return`）
 - **返回**：更新后完整记录（含 `balance_after`）。
 - **错误**：id 不存在、字段无效、无任何修改字段 → 返回对应 error。
-- **效果**：改动金额/类型/日期会触发**全量余额重算**。
+- **效果**：改动金额/类型/日期会触发**全量余额重算**.
 
-### 4.17 `ensure_allowance_tool` —— 确保本月有期初生活费
+---
 
-### 5.1 记账（核心路径）
+## 5. 建议的对话流程（agent 应遵循)
 1. 用户说"午饭25"
 2. agent 调 `parse_expense_text_tool("午饭25")` → 得到 `{amount:25, category:"吃饭", note:"午饭", expense_type:"expense"}`
 3. agent 调 `add_expense_tool(amount=25, category="吃饭", note="午饭")`
