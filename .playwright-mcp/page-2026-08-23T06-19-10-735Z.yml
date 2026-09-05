@@ -1,0 +1,120 @@
+- generic [ref=f10e2]:
+  - generic [ref=f10e3]:
+    - link "Skip to content" [ref=f10e4] [cursor=pointer]:
+      - /url: "#start-of-content"
+    - banner "Global navigation menu" [ref=f10e8]:
+      - generic [ref=f10e9]:
+        - generic [ref=f10e10]:
+          - button "Open menu" [ref=f10e12] [cursor=pointer]
+          - link "Homepage (g then d)" [ref=f10e15] [cursor=pointer]:
+            - /url: /
+        - generic [ref=f10e18]:
+          - navigation "Breadcrumbs" [ref=f10e19]:
+            - list [ref=f10e20]:
+              - listitem [ref=f10e21]:
+                - link "zhan-zip" [ref=f10e22] [cursor=pointer]:
+                  - /url: /zhan-zip
+              - listitem [ref=f10e24]:
+                - link "bookkeeping" [ref=f10e25] [cursor=pointer]:
+                  - /url: /zhan-zip/bookkeeping
+                - button "Switch repository (alt shift r)" [ref=f10e26] [cursor=pointer]
+          - button "Open quick search dialog, type / to search (forward slash)" [ref=f10e29] [cursor=pointer]
+        - generic [ref=f10e32]:
+          - link "You have no unread notifications (g then n)" [ref=f10e33] [cursor=pointer]:
+            - /url: /notifications
+          - button "Open user navigation menu" [ref=f10e37] [cursor=pointer]:
+            - img "User avatar" [ref=f10e38]
+      - heading "Repository navigation" [level=2] [ref=f10e39]
+      - navigation "Repository" [ref=f10e40]:
+        - list [ref=f10e41]:
+          - listitem [ref=f10e42]:
+            - link "Code" [ref=f10e43] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping
+          - listitem [ref=f10e45]:
+            - link "Issues" [ref=f10e46] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping/issues
+          - listitem [ref=f10e48]:
+            - link "Pull requests" [ref=f10e49] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping/pulls
+          - listitem [ref=f10e51]:
+            - link "Actions" [ref=f10e52] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping/actions
+          - listitem [ref=f10e54]:
+            - link "Projects" [ref=f10e55] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping/projects
+          - listitem [ref=f10e57]:
+            - link "Security and quality" [ref=f10e58] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping/security
+          - listitem [ref=f10e60]:
+            - link "Insights" [ref=f10e61] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping/pulse
+          - listitem [ref=f10e63]:
+            - link "Settings" [ref=f10e64] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping/settings
+        - button "More items" [ref=f10e68] [cursor=pointer]:
+          - generic [ref=f10e71]:
+            - text: More
+            - generic [ref=f10e72]: items
+  - main [ref=f10e76]:
+    - generic [ref=f10e82]:
+      - generic [ref=f10e85]:
+        - link "Deploy to GitHub Pages" [ref=f10e88] [cursor=pointer]:
+          - /url: /zhan-zip/bookkeeping/actions/workflows/deploy.yml
+        - generic [ref=f10e92]:
+          - generic [ref=f10e93]:
+            - img "queued:" [ref=f10e97]
+            - 'heading "Deploy to GitHub Pages #3" [level=1] [ref=f10e99]'
+          - group [ref=f10e103]:
+            - img "Show options" [ref=f10e105] [cursor=pointer]
+        - button [ref=f10e108] [cursor=pointer]:
+          - heading "Summary" [level=2] [ref=f10e112]
+      - generic [ref=f10e118]:
+        - region "Workflow run summary" [ref=f10e119]:
+          - generic [ref=f10e120]:
+            - generic [ref=f10e121]:
+              - generic [ref=f10e122]: Manually triggered August 23, 2026 14:19now
+              - generic [ref=f10e123]:
+                - link [ref=f10e124] [cursor=pointer]:
+                  - /url: /zhan-zip
+                  - img "@zhan-zip" [ref=f10e125]
+                  - text: zhan-zip
+                - generic [ref=f10e126]:
+                  - text: ⁠
+                  - link "3beef6c" [ref=f10e127] [cursor=pointer]:
+                    - /url: /zhan-zip/bookkeeping/commit/3beef6c7dcc94a6ba6e8aa1ef289dd29fce861ae
+                - link "main" [ref=f10e130] [cursor=pointer]:
+                  - /url: /zhan-zip/bookkeeping/tree/refs/heads/main
+            - generic [ref=f10e132]:
+              - generic [ref=f10e133]: Status
+              - text: Queued
+            - generic [ref=f10e134]:
+              - generic [ref=f10e135]: Total duration
+              - link "–" [ref=f10e136] [cursor=pointer]:
+                - /url: /zhan-zip/bookkeeping/actions/runs/32622613536/usage
+            - generic [ref=f10e137]:
+              - generic [ref=f10e138]: Artifacts
+              - text: –
+        - region "Workflow run graph" [ref=f10e139]:
+          - generic [ref=f10e141]:
+            - generic [ref=f10e143]:
+              - heading [level=2] [ref=f10e144]:
+                - link "deploy.yml" [ref=f10e145] [cursor=pointer]:
+                  - /url: /zhan-zip/bookkeeping/actions/runs/32622613536/workflow
+              - generic [ref=f10e146]: "on: workflow_dispatch"
+            - generic [ref=f10e148]:
+              - generic [ref=f10e149]:
+                - generic [ref=f10e150]: build
+                - generic [ref=f10e161]: deploy
+              - generic [ref=f10e172]:
+                - paragraph [ref=f10e173]: Oh hello! Nice to see you.
+                - paragraph [ref=f10e174]:
+                  - text: Made with ❤️ by
+                  - link [ref=f10e175] [cursor=pointer]:
+                    - /url: https://actions.github.io/humans.txt
+                    - text: humans.txt
+            - generic [ref=f10e176]:
+              - button "Fit to window" [disabled] [ref=f10e177]
+              - generic [ref=f10e178]:
+                - button "Zoom out" [disabled] [ref=f10e180]
+                - button "Zoom in" [ref=f10e182] [cursor=pointer]
+        - region "Annotations"

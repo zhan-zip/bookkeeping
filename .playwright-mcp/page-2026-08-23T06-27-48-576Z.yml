@@ -1,0 +1,277 @@
+- generic [ref=f14e2]:
+  - generic [ref=f14e3]:
+    - link "Skip to content" [ref=f14e4] [cursor=pointer]:
+      - /url: "#start-of-content"
+    - banner "Global navigation menu" [ref=f14e8]:
+      - generic [ref=f14e9]:
+        - generic [ref=f14e10]:
+          - button "Open menu" [ref=f14e12] [cursor=pointer]
+          - link "Homepage (g then d)" [ref=f14e15] [cursor=pointer]:
+            - /url: /
+        - generic [ref=f14e18]:
+          - navigation "Breadcrumbs" [ref=f14e19]:
+            - list [ref=f14e20]:
+              - listitem [ref=f14e21]:
+                - link "zhan-zip" [ref=f14e22] [cursor=pointer]:
+                  - /url: /zhan-zip
+              - listitem [ref=f14e24]:
+                - link "bookkeeping" [ref=f14e25] [cursor=pointer]:
+                  - /url: /zhan-zip/bookkeeping
+                - button "Switch repository (alt shift r)" [ref=f14e26] [cursor=pointer]
+          - button "Open quick search dialog, type / to search (forward slash)" [ref=f14e29] [cursor=pointer]
+        - generic [ref=f14e32]:
+          - link "You have unread notifications (g then n)" [ref=f14e33] [cursor=pointer]:
+            - /url: /notifications
+          - button "Open user navigation menu" [ref=f14e37] [cursor=pointer]:
+            - img "User avatar" [ref=f14e38]
+      - heading "Repository navigation" [level=2] [ref=f14e39]
+      - navigation "Repository" [ref=f14e40]:
+        - list [ref=f14e41]:
+          - listitem [ref=f14e42]:
+            - link "Code" [ref=f14e43] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping
+          - listitem [ref=f14e45]:
+            - link "Issues" [ref=f14e46] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping/issues
+          - listitem [ref=f14e48]:
+            - link "Pull requests" [ref=f14e49] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping/pulls
+          - listitem [ref=f14e51]:
+            - link "Actions" [ref=f14e52] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping/actions
+          - listitem [ref=f14e54]:
+            - link "Projects" [ref=f14e55] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping/projects
+        - button "More items, including current item" [ref=f14e59] [cursor=pointer]:
+          - generic [ref=f14e62]:
+            - text: More
+            - generic [ref=f14e63]: items
+  - generic [ref=f14e67]:
+    - button "Dismiss this message" [active] [ref=f14e68] [cursor=pointer]
+    - alert [ref=f14e71]: GitHub Pages source saved.
+  - main [ref=f14e74]:
+    - generic [ref=f14e76]:
+      - 'heading "Settings: zhan-zip/bookkeeping" [level=1] [ref=f14e77]'
+      - generic [ref=f14e79]:
+        - navigation "General settings" [ref=f14e82]:
+          - list [ref=f14e84]:
+            - listitem [ref=f14e85]:
+              - link "General" [ref=f14e86] [cursor=pointer]:
+                - /url: /zhan-zip/bookkeeping/settings
+            - listitem [ref=f14e88]
+            - listitem [ref=f14e89]:
+              - generic [ref=f14e92]:
+                - heading "Access" [level=2] [ref=f14e94]
+                - list "Access" [ref=f14e95]:
+                  - listitem [ref=f14e96]:
+                    - link "Collaborators" [ref=f14e97] [cursor=pointer]:
+                      - /url: /zhan-zip/bookkeeping/settings/access
+                  - listitem [ref=f14e99]:
+                    - button "Moderation" [ref=f14e100] [cursor=pointer]
+            - listitem [ref=f14e102]
+            - listitem [ref=f14e103]:
+              - generic [ref=f14e106]:
+                - heading "Code, planning, and automation" [level=2] [ref=f14e108]
+                - list "Code, planning, and automation" [ref=f14e109]:
+                  - listitem [ref=f14e110]:
+                    - link "Branches" [ref=f14e111] [cursor=pointer]:
+                      - /url: /zhan-zip/bookkeeping/settings/branches
+                  - listitem [ref=f14e113]:
+                    - link "Tags" [ref=f14e114] [cursor=pointer]:
+                      - /url: /zhan-zip/bookkeeping/settings/tag_protection
+                  - listitem [ref=f14e116]:
+                    - button "Rulesets" [ref=f14e117] [cursor=pointer]
+                  - listitem [ref=f14e119]:
+                    - button "Actions" [ref=f14e120] [cursor=pointer]
+                  - listitem [ref=f14e122]:
+                    - link "Webhooks" [ref=f14e123] [cursor=pointer]:
+                      - /url: /zhan-zip/bookkeeping/settings/hooks
+                  - listitem [ref=f14e125]:
+                    - button "Copilot" [ref=f14e126] [cursor=pointer]
+                  - listitem [ref=f14e128]:
+                    - button "Planning" [ref=f14e129] [cursor=pointer]
+                  - listitem [ref=f14e131]:
+                    - link "Environments" [ref=f14e132] [cursor=pointer]:
+                      - /url: /zhan-zip/bookkeeping/settings/environments
+                  - listitem [ref=f14e134]:
+                    - link "Codespaces" [ref=f14e135] [cursor=pointer]:
+                      - /url: /zhan-zip/bookkeeping/settings/codespaces
+                  - listitem [ref=f14e137]:
+                    - link "Pages" [ref=f14e138] [cursor=pointer]:
+                      - /url: /zhan-zip/bookkeeping/settings/pages
+            - listitem [ref=f14e140]
+            - listitem [ref=f14e141]:
+              - generic [ref=f14e144]:
+                - heading "Security and quality" [level=2] [ref=f14e146]
+                - list "Security and quality" [ref=f14e147]:
+                  - listitem [ref=f14e148]:
+                    - link "Advanced Security" [ref=f14e149] [cursor=pointer]:
+                      - /url: /zhan-zip/bookkeeping/settings/security_analysis
+                  - listitem [ref=f14e151]:
+                    - link "Deploy keys" [ref=f14e152] [cursor=pointer]:
+                      - /url: /zhan-zip/bookkeeping/settings/keys
+                  - listitem [ref=f14e154]:
+                    - button "Secrets and variables" [ref=f14e155] [cursor=pointer]
+            - listitem [ref=f14e157]
+            - listitem [ref=f14e158]:
+              - generic [ref=f14e161]:
+                - heading "Integrations" [level=2] [ref=f14e163]
+                - list "Integrations" [ref=f14e164]:
+                  - listitem [ref=f14e165]:
+                    - link "GitHub Apps" [ref=f14e166] [cursor=pointer]:
+                      - /url: /zhan-zip/bookkeeping/settings/installations
+                  - listitem [ref=f14e168]:
+                    - link "Email notifications" [ref=f14e169] [cursor=pointer]:
+                      - /url: /zhan-zip/bookkeeping/settings/notifications
+        - generic [ref=f14e171]:
+          - heading "GitHub Pages" [level=2] [ref=f14e173]
+          - paragraph [ref=f14e174]:
+            - link "GitHub Pages" [ref=f14e175] [cursor=pointer]:
+              - /url: https://pages.github.com
+            - text: is designed to host your personal, organization, or project pages from a GitHub repository.
+          - generic [ref=f14e176]:
+            - generic [ref=f14e177]:
+              - generic [ref=f14e178]:
+                - text: Your site is live at
+                - link "https://zhan-zip.github.io/bookkeeping/" [ref=f14e179] [cursor=pointer]:
+                  - /url: https://zhan-zip.github.io/bookkeeping/
+              - generic [ref=f14e180]:
+                - text: Last
+                - link "deployed" [ref=f14e181] [cursor=pointer]:
+                  - /url: /zhan-zip/bookkeeping/actions/runs/32095556207
+                - text: by
+                - img "@zhan-zip" [ref=f14e182]
+                - link "zhan-zip" [ref=f14e183] [cursor=pointer]:
+                  - /url: /zhan-zip
+                - text: August 18, 2026 11:275 days ago
+            - generic [ref=f14e184]:
+              - link "Visit site" [ref=f14e185] [cursor=pointer]:
+                - /url: https://zhan-zip.github.io/bookkeeping/
+              - button "Unpublish site" [ref=f14e188] [cursor=pointer]
+          - heading "Build and deployment" [level=2] [ref=f14e191]
+          - generic [ref=f14e192]:
+            - generic [ref=f14e193]:
+              - text: Source
+              - button "Source GitHub Actions" [ref=f14e197] [cursor=pointer]:
+                - generic [ref=f14e198]: GitHub Actions
+            - generic [ref=f14e201]:
+              - paragraph [ref=f14e202]:
+                - text: Use a suggested workflow,
+                - link "browse all workflows" [ref=f14e203] [cursor=pointer]:
+                  - /url: /zhan-zip/bookkeeping/actions/new
+                - text: ", or"
+                - link "create your own" [ref=f14e204] [cursor=pointer]:
+                  - /url: /zhan-zip/bookkeeping/new/main?filename=.github%2Fworkflows%2F&workflow_template=ci%2Fblank
+                - text: .
+              - generic [ref=f14e205]:
+                - generic [ref=f14e206]:
+                  - generic [ref=f14e207]:
+                    - paragraph [ref=f14e208]:
+                      - strong [ref=f14e209]: GitHub Pages Jekyll
+                      - text: By GitHub Actions
+                    - img "GitHub Pages Jekyll logo" [ref=f14e211]
+                  - paragraph [ref=f14e212]: Package a Jekyll site with GitHub Pages dependencies preinstalled.
+                  - button "Configure GitHub Pages Jekyll" [ref=f14e214] [cursor=pointer]:
+                    - generic [ref=f14e215]: Configure
+                - generic [ref=f14e217]:
+                  - generic [ref=f14e218]:
+                    - paragraph [ref=f14e219]:
+                      - strong [ref=f14e220]: Static HTML
+                      - text: By GitHub Actions
+                    - img "Static HTML logo" [ref=f14e222]
+                  - paragraph [ref=f14e223]: Deploy static files in a repository without a build.
+                  - button "Configure Static HTML" [ref=f14e225] [cursor=pointer]:
+                    - generic [ref=f14e226]: Configure
+              - paragraph [ref=f14e228]:
+                - text: Workflow details will appear here once your site has been deployed.
+                - link "View workflow runs." [ref=f14e229] [cursor=pointer]:
+                  - /url: /zhan-zip/bookkeeping/actions
+          - generic [ref=f14e230]:
+            - text: Your site was last deployed to the
+            - link "github-pages" [ref=f14e231] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping/deployments?environment=github-pages#activity-log
+            - text: environment by the
+            - link "pages build and deployment" [ref=f14e233] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping/actions/runs/32095556207
+            - text: workflow.
+            - paragraph [ref=f14e234]:
+              - link "Learn more about deploying to GitHub Pages using custom workflows" [ref=f14e235] [cursor=pointer]:
+                - /url: https://docs.github.com/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#publishing-with-a-custom-github-actions-workflow
+          - heading "Custom domain" [level=3] [ref=f14e236]
+          - generic [ref=f14e237]:
+            - generic [ref=f14e239]:
+              - term [ref=f14e240]:
+                - generic [ref=f14e241]: Custom domain
+                - paragraph [ref=f14e242]:
+                  - text: Custom domains allow you to serve your site from a domain other than
+                  - code [ref=f14e243]: zhan-zip.github.io
+                  - text: .
+                  - link "Learn more about configuring custom domains" [ref=f14e244] [cursor=pointer]:
+                    - /url: https://docs.github.com/pages/configuring-a-custom-domain-for-your-github-pages-site
+                  - text: .
+              - definition [ref=f14e245]:
+                - generic [ref=f14e246]:
+                  - textbox "Custom domain" [ref=f14e248]
+                  - generic [ref=f14e249]:
+                    - button "Save" [disabled] [ref=f14e250]
+                    - button "Remove" [disabled] [ref=f14e251]
+                - paragraph
+            - separator [ref=f14e252]
+          - generic [ref=f14e254]:
+            - checkbox "Enforce HTTPS — Required for your site because you are using the default domain (zhan-zip.github.io)" [checked] [disabled] [ref=f14e255]
+            - generic [ref=f14e256]:
+              - text: Enforce HTTPS
+              - generic [ref=f14e257]:
+                - text: — Required for your site because you are using the default domain (
+                - code [ref=f14e258]: zhan-zip.github.io
+                - text: )
+            - paragraph [ref=f14e260]:
+              - text: HTTPS provides a layer of encryption that prevents others from snooping on or tampering with traffic to your site. When HTTPS is enforced, your site will only be served over HTTPS.
+              - link "Learn more about securing your GitHub Pages site with HTTPS" [ref=f14e261] [cursor=pointer]:
+                - /url: https://docs.github.com/pages/getting-started-with-github-pages/securing-your-github-pages-site-with-https
+              - text: .
+          - generic [ref=f14e262]:
+            - generic [ref=f14e263]:
+              - heading "Visibility" [level=3] [ref=f14e264]
+              - generic [ref=f14e265]: GitHub Enterprise
+            - paragraph [ref=f14e266]:
+              - text: With a GitHub Enterprise account, you can restrict access to your GitHub Pages site by publishing it privately. You can use privately published sites to share your internal documentation or knowledge base with members of your enterprise. You can try GitHub Enterprise risk-free for 30 days.
+              - link "Learn more about the visibility of your GitHub Pages site." [ref=f14e267] [cursor=pointer]:
+                - /url: https://docs.github.com/pages/getting-started-with-github-pages/changing-the-visibility-of-your-github-pages-site
+            - link "Start free for 30 days" [ref=f14e268] [cursor=pointer]:
+              - /url: /account/enterprises/new
+  - contentinfo [ref=f14e271]:
+    - heading "Footer" [level=2] [ref=f14e272]
+    - generic [ref=f14e273]:
+      - generic [ref=f14e274]:
+        - link "GitHub Homepage" [ref=f14e275] [cursor=pointer]:
+          - /url: https://github.com
+        - generic [ref=f14e278]: © 2026 GitHub, Inc.
+      - navigation "Footer" [ref=f14e279]:
+        - heading "Footer navigation" [level=3] [ref=f14e280]
+        - list "Footer navigation" [ref=f14e281]:
+          - listitem [ref=f14e282]:
+            - link "Terms" [ref=f14e283] [cursor=pointer]:
+              - /url: https://docs.github.com/site-policy/github-terms/github-terms-of-service
+          - listitem [ref=f14e284]:
+            - link "Privacy" [ref=f14e285] [cursor=pointer]:
+              - /url: https://docs.github.com/site-policy/privacy-policies/github-privacy-statement
+          - listitem [ref=f14e286]:
+            - link "Security" [ref=f14e287] [cursor=pointer]:
+              - /url: https://github.com/security
+          - listitem [ref=f14e288]:
+            - link "Status" [ref=f14e289] [cursor=pointer]:
+              - /url: https://www.githubstatus.com/
+          - listitem [ref=f14e290]:
+            - link "Community" [ref=f14e291] [cursor=pointer]:
+              - /url: https://github.community/
+          - listitem [ref=f14e292]:
+            - link "Docs" [ref=f14e293] [cursor=pointer]:
+              - /url: https://docs.github.com/
+          - listitem [ref=f14e294]:
+            - link "Contact" [ref=f14e295] [cursor=pointer]:
+              - /url: https://support.github.com?tags=dotcom-footer
+          - listitem [ref=f14e296]:
+            - button "Manage cookies" [ref=f14e298] [cursor=pointer]
+          - listitem [ref=f14e299]:
+            - button "Do not share my personal information" [ref=f14e301] [cursor=pointer]

@@ -11,7 +11,7 @@
 
 ## 0. 一页速览（给对接方 AI 的摘要）
 
-- 这是一个 **MCP Server（stdio 模式）**，用 `fastmcp` 实现，把"记账系统"的能力暴露成 10 个工具。
+- 这是一个 **MCP Server（stdio 模式）**，用 `fastmcp` 实现，把"记账系统"的能力暴露成 13 个工具。
 - 机器人项目把它作为 MCP Server 挂载到 agent 上，**用户对机器人说一句话，agent 通过调用这些工具完成记账/查询**。
 - 数据**不是**存在机器人这边，而是存在 GitHub 仓库的 JSON 文件里（`data/expenses.json` / `data/wishlist.json`），MCP server 内部通过 GitHub Contents API 读写，**机器人项目不需要也不应该直接操作数据文件**。
 - 机器人侧拿到的是**写权限 token**（存 `.env`），与手机 PWA 不同。**token 只放服务器环境变量，绝不进入机器人对话上下文或前端。**
@@ -160,7 +160,7 @@ python server/src/mcp_server.py
 
 ---
 
-## 4. 工具完整契约（10 个）
+## 4. 工具完整契约（13 个）
 
 > 说明：以下"错误"是指 MCP 调用层面返回的错误结构/异常，agent 应识别到并调整输入，而不是当成系统故障。
 > 所有工具名以 `_tool` 结尾，**这是封装层**；原始 `storage.py` 函数名不要直接调。
@@ -277,14 +277,82 @@ python server/src/mcp_server.py
 - **效果**：从心愿清单移除该条，并新增一笔支出记录。**注意：这是两步写操作**（删心愿 + 加支出），如果中间出错可能不同步，agent 应在确认用户"真的买了"后再调用。
 - **错误**：wish_id 不存在 → `{"error": "心愿不存在: <id>"}`
 
-### 4.10 `get_monthly_report_tool` —— 月报
+### 4.10 `get_monthly_report_tool` —— 月报（原始数据）
 - **入参**：无
 - **返回**：包含 `month`、`allowance`、`nominal_income`、`nominal_expense`、`aa_advance`、`aa_return`、`actual_income`、`actual_expense`、`final_balance`、`saved_this_month`、`overspent`、`wishlist_count`、`wishlist_total`、`category_stats`、`records`（本月全部流水）。
 - **用途**：给用户生成"月报"类回答/推送的最全数据源。
 
----
+### 4.11 `push_monthly_report_tool` —— 月报推送文本（格式化输出）
+- **入参**
+  - `month: string`（可选）：目标月份 `YYYY-MM`，默认当前月。
+- **返回**
+  ```json
+  {
+    "month": "2026-09",
+    "text": "📊 2026-09 月报\n─ ─ ─\n💰 期初生活费：¥2000.00\n📥 名义收入：¥2000.00  （含 AA 回款 ¥0.00）\n📤 名义支出：¥500.00  （含 AA 垫付 ¥0.00）\n📈 实际收入：¥2000.00\n📉 实际支出：¥500.00\n\n🟢 期末余额：¥1500.00\n💾 本月存下：¥1500.00\n\n🎁 心愿清单：2 件 共 ¥1298.00\n\n📂 分类支出：\n  吃饭：¥300.00 (60.0%)\n  零食：¥200.00 (40.0%)\n\n📝 近期流水（最近 10 笔）：\n  💸 2026-09-01 -¥25.00 [吃饭] 午饭 余额¥1975.00\n  ...",
+    "raw": { /* 同 get_monthly_report_tool 的完整返回 */ }
+  }
+  ```
+- **文本内容说明**（`_format_monthly_report_text` 生成）：
+  1. **标题 + 月份**
+  2. **收支概览**：期初生活费、名义/实际收入支出、AA 垫付回款单独标注
+  3. **结余**：期末余额、本月存下/超支（带颜色表情）
+  4. **心愿清单**：数量 + 总价
+  5. **分类占比**：按金额降序，显示金额与占实际支出百分比
+  6. **近期流水**：最近 10 笔（倒序），含类型表情、金额、分类、备注、时点余额
+- **用途**：机器人直接把 `text` 推送给用户（QQ 群/私聊），无需再组装。如需自定义格式，用 `raw` 字段二次处理。
+- **错误**：月份格式不对 → 返回当前月报（容错处理，不报错）。
 
-## 5. 建议的对话流程（agent 应遵循）
+### 4.12 `list_categories_tool` —— 获取所有分类
+- **入参**：无
+- **返回**：`{"categories": ["技术", "学习", "吃饭", "零食", "购物", "生活", "社交", "出行", ...]}`（动态读取 `data/categories.json`，内置 8 类为默认值）。
+- **用途**：机器人在记账前可先调用获取当前可用分类，避免硬编码。
+
+### 4.13 `add_category_tool` —— 新增分类
+- **入参**
+  - `name: string`：分类名称（1-10 字符，去空）。
+- **返回**：
+  ```json
+  { "added": true, "category": "新分类", "categories": ["技术", "学习", "吃饭", "零食", "购物", "生活", "社交", "出行", "新分类"] }
+  ```
+- **错误**：空名/超长/已存在 → `{"error": "..."}`
+
+### 4.14 `delete_category_tool` —— 删除分类
+- **入参**
+  - `name: string`：要删除的分类名。
+- **返回**：
+  ```json
+  { "deleted": true, "category": "旧分类", "categories": ["技术", "学习", "吃饭", "零食", "购物", "生活", "社交", "出行"] }
+  ```
+- **保护机制**：内置 8 类（技术/学习/吃饭/零食/购物/生活/社交/出行）**不可删除**，尝试删除返回 `{"error": "内置分类不可删除: xxx"}`。
+- **注意**：已有流水引用的分类若被删，后续记账时会校验不过；建议先确认无引用再删。
+
+### 4.15 `delete_expense_tool` —— 删除流水（按 id）
+- **入参**
+  - `expense_id: string`：流水记录的 id（来自 `get_recent_tool` 或 `add_expense_tool` 的返回）。
+- **返回**：
+  ```json
+  {
+    "deleted": true,
+    "record": { "id": "...", "type": "expense", "amount": 25, "category": "吃饭", "note": "午饭", "date": "2026-08-31" }
+  }
+  ```
+- **错误**：id 不存在 → `{"error": "流水不存在: xxx"}`
+- **效果**：删除后**所有后续记录的 balance_after 自动重算**。
+
+### 4.16 `update_expense_tool` —— 修改流水（按 id，部分字段可选）
+- **入参**
+  - `expense_id: string`：流水 id
+  - `amount: number`（可选）
+  - `category: string`（可选，支出/AA 须在白名单，income 不校验）
+  - `note: string`（可选）
+  - `date: string`（可选，`YYYY-MM-DD`）
+  - `expense_type: string`（可选，`expense/income/aa_advance/aa_return`）
+- **返回**：更新后完整记录（含 `balance_after`）。
+- **错误**：id 不存在、字段无效、无任何修改字段 → 返回对应 error。
+- **效果**：改动金额/类型/日期会触发**全量余额重算**。
+
+### 4.17 `ensure_allowance_tool` —— 确保本月有期初生活费
 
 ### 5.1 记账（核心路径）
 1. 用户说"午饭25"

@@ -10,11 +10,13 @@ from .models import (
 
 EXPENSES_PATH = os.getenv("EXPENSES_PATH", "data/expenses.json")
 WISHLIST_PATH = os.getenv("WISHLIST_PATH", "data/wishlist.json")
+CATEGORIES_PATH = os.getenv("CATEGORIES_PATH", "data/categories.json")
 MONTHLY_ALLOWANCE = float(os.getenv("MONTHLY_ALLOWANCE", "2000"))
 
 
 DEFAULT_EXPENSES = "[]"
 DEFAULT_WISHLIST = "[]"
+DEFAULT_CATEGORIES = json.dumps(CATEGORIES, ensure_ascii=False)
 
 
 def _load_expenses() -> Tuple[List[ExpenseRecord], Optional[str]]:
@@ -43,6 +45,56 @@ def _save_wishlist(items: List[WishItem], sha: Optional[str], message: str) -> s
     content = json.dumps([w.to_dict() for w in items], ensure_ascii=False, indent=2)
     result = put_file(WISHLIST_PATH, content, sha, message)
     return result["content"]["sha"]
+
+
+def _load_categories() -> Tuple[List[str], Optional[str]]:
+    data = get_file(CATEGORIES_PATH)
+    if not data:
+        return CATEGORIES, None
+    content = json.loads(data["content"])
+    if isinstance(content, list) and all(isinstance(x, str) for x in content):
+        return content, data["sha"]
+    return CATEGORIES, data["sha"]
+
+
+def _save_categories(categories: List[str], sha: Optional[str], message: str) -> str:
+    content = json.dumps(categories, ensure_ascii=False, indent=2)
+    result = put_file(CATEGORIES_PATH, content, sha, message)
+    return result["content"]["sha"]
+
+
+def get_categories() -> List[str]:
+    """获取所有分类"""
+    categories, _ = _load_categories()
+    return categories
+
+
+def add_category(name: str) -> dict:
+    """新增分类（去重、去空、长度限制）"""
+    name = name.strip()
+    if not name:
+        return {"error": "分类名不能为空"}
+    if len(name) > 10:
+        return {"error": "分类名不能超过 10 字符"}
+    categories, sha = _load_categories()
+    if name in categories:
+        return {"error": f"分类已存在: {name}"}
+    categories.append(name)
+    _save_categories(categories, sha, f"新增分类: {name}")
+    return {"added": True, "category": name, "categories": categories}
+
+
+def delete_category(name: str) -> dict:
+    """删除分类（保护默认 8 类不被删）"""
+    protected = {"技术", "学习", "吃饭", "零食", "购物", "生活", "社交", "出行"}
+    if name in protected:
+        return {"error": f"内置分类不可删除: {name}"}
+    categories, sha = _load_categories()
+    if name not in categories:
+        return {"error": f"分类不存在: {name}"}
+    categories.remove(name)
+    _save_categories(categories, sha, f"删除分类: {name}")
+    return {"deleted": True, "category": name, "categories": categories}
 
 
 def _calculate_balance(records: List[ExpenseRecord], up_to_index: int) -> float:

@@ -73,7 +73,7 @@ WISHLIST_SCHEMA = {
     },
 }
 
-CATEGORIES = [
+_DEFAULT_CATEGORIES = [
     "技术",
     "学习",
     "吃饭",
@@ -83,6 +83,23 @@ CATEGORIES = [
     "社交",
     "出行",
 ]
+
+
+def get_categories() -> list[str]:
+    """从 data/categories.json 读取分类，失败则回退到内置默认值"""
+    try:
+        import os
+        categories_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "categories.json")
+        with open(categories_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            if isinstance(data, list) and all(isinstance(x, str) for x in data):
+                return data
+    except Exception:
+        pass
+    return _DEFAULT_CATEGORIES.copy()
+
+
+CATEGORIES = get_categories()
 
 def generate_id() -> str:
     return datetime.now().strftime("%Y%m%d-%H%M%S-%f")[:17]

@@ -1,0 +1,230 @@
+- generic [ref=f7e2]:
+  - generic [ref=f7e3]:
+    - link "Skip to content" [ref=f7e4] [cursor=pointer]:
+      - /url: "#start-of-content"
+    - banner "Global navigation menu" [ref=f7e8]:
+      - generic [ref=f7e9]:
+        - generic [ref=f7e10]:
+          - button "Open menu" [ref=f7e12] [cursor=pointer]
+          - link "Homepage (g then d)" [ref=f7e15] [cursor=pointer]:
+            - /url: /
+        - generic [ref=f7e18]:
+          - navigation "Breadcrumbs" [ref=f7e19]:
+            - list [ref=f7e20]:
+              - listitem [ref=f7e21]:
+                - link "zhan-zip" [ref=f7e22] [cursor=pointer]:
+                  - /url: /zhan-zip
+              - listitem [ref=f7e24]:
+                - link "bookkeeping" [ref=f7e25] [cursor=pointer]:
+                  - /url: /zhan-zip/bookkeeping
+                - button "Switch repository (alt shift r)" [ref=f7e26] [cursor=pointer]
+          - button "Open quick search dialog, type / to search (forward slash)" [ref=f7e29] [cursor=pointer]
+        - generic [ref=f7e32]:
+          - link "You have unread notifications (g then n)" [ref=f7e221] [cursor=pointer]:
+            - /url: /notifications
+          - button "Open user navigation menu" [ref=f7e37] [cursor=pointer]:
+            - img "User avatar" [ref=f7e38]
+      - heading "Repository navigation" [level=2] [ref=f7e39]
+      - navigation "Repository" [ref=f7e40]:
+        - list [ref=f7e41]:
+          - listitem [ref=f7e42]:
+            - link "Code" [ref=f7e43] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping
+          - listitem [ref=f7e45]:
+            - link "Issues" [ref=f7e46] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping/issues
+          - listitem [ref=f7e48]:
+            - link "Pull requests" [ref=f7e49] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping/pulls
+          - listitem [ref=f7e51]:
+            - link "Actions" [ref=f7e52] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping/actions
+          - listitem [ref=f7e54]:
+            - link "Projects" [ref=f7e55] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping/projects
+        - button "More items, including current item" [ref=f7e222] [cursor=pointer]:
+          - generic [ref=f7e71]:
+            - text: More
+            - generic [ref=f7e72]: items
+  - main [ref=f7e75]:
+    - generic [ref=f7e76]:
+      - 'heading "Settings: zhan-zip/bookkeeping" [level=1] [ref=f7e223]'
+      - generic [ref=f7e225]:
+        - navigation "General settings" [ref=f7e228]:
+          - list [ref=f7e230]:
+            - listitem [ref=f7e231]:
+              - link "General" [ref=f7e232] [cursor=pointer]:
+                - /url: /zhan-zip/bookkeeping/settings
+            - listitem [ref=f7e234]
+            - listitem [ref=f7e235]:
+              - generic [ref=f7e238]:
+                - heading "Access" [level=2] [ref=f7e240]
+                - list "Access" [ref=f7e241]:
+                  - listitem [ref=f7e242]:
+                    - link "Collaborators" [ref=f7e243] [cursor=pointer]:
+                      - /url: /zhan-zip/bookkeeping/settings/access
+                  - listitem [ref=f7e245]:
+                    - button "Moderation" [ref=f7e246] [cursor=pointer]
+            - listitem [ref=f7e248]
+            - listitem [ref=f7e249]:
+              - generic [ref=f7e252]:
+                - heading "Code, planning, and automation" [level=2] [ref=f7e254]
+                - list "Code, planning, and automation" [ref=f7e255]:
+                  - listitem [ref=f7e256]:
+                    - link "Branches" [ref=f7e257] [cursor=pointer]:
+                      - /url: /zhan-zip/bookkeeping/settings/branches
+                  - listitem [ref=f7e259]:
+                    - link "Tags" [ref=f7e260] [cursor=pointer]:
+                      - /url: /zhan-zip/bookkeeping/settings/tag_protection
+                  - listitem [ref=f7e262]:
+                    - button "Rulesets" [ref=f7e263] [cursor=pointer]
+                  - listitem [ref=f7e265]:
+                    - button "Actions" [ref=f7e266] [cursor=pointer]
+                  - listitem [ref=f7e268]:
+                    - link "Webhooks" [ref=f7e269] [cursor=pointer]:
+                      - /url: /zhan-zip/bookkeeping/settings/hooks
+                  - listitem [ref=f7e271]:
+                    - button "Copilot" [ref=f7e272] [cursor=pointer]
+                  - listitem [ref=f7e274]:
+                    - button "Planning" [ref=f7e275] [cursor=pointer]
+                  - listitem [ref=f7e277]:
+                    - link "Environments" [ref=f7e278] [cursor=pointer]:
+                      - /url: /zhan-zip/bookkeeping/settings/environments
+                  - listitem [ref=f7e280]:
+                    - link "Codespaces" [ref=f7e281] [cursor=pointer]:
+                      - /url: /zhan-zip/bookkeeping/settings/codespaces
+                  - listitem [ref=f7e283]:
+                    - link "Pages" [ref=f7e284] [cursor=pointer]:
+                      - /url: /zhan-zip/bookkeeping/settings/pages
+            - listitem [ref=f7e286]
+            - listitem [ref=f7e287]:
+              - generic [ref=f7e290]:
+                - heading "Security and quality" [level=2] [ref=f7e292]
+                - list "Security and quality" [ref=f7e293]:
+                  - listitem [ref=f7e294]:
+                    - link "Advanced Security" [ref=f7e295] [cursor=pointer]:
+                      - /url: /zhan-zip/bookkeeping/settings/security_analysis
+                  - listitem [ref=f7e297]:
+                    - link "Deploy keys" [ref=f7e298] [cursor=pointer]:
+                      - /url: /zhan-zip/bookkeeping/settings/keys
+                  - listitem [ref=f7e300]:
+                    - button "Secrets and variables" [ref=f7e301] [cursor=pointer]
+            - listitem [ref=f7e303]
+            - listitem [ref=f7e304]:
+              - generic [ref=f7e307]:
+                - heading "Integrations" [level=2] [ref=f7e309]
+                - list "Integrations" [ref=f7e310]:
+                  - listitem [ref=f7e311]:
+                    - link "GitHub Apps" [ref=f7e312] [cursor=pointer]:
+                      - /url: /zhan-zip/bookkeeping/settings/installations
+                  - listitem [ref=f7e314]:
+                    - link "Email notifications" [ref=f7e315] [cursor=pointer]:
+                      - /url: /zhan-zip/bookkeeping/settings/notifications
+        - generic [ref=f7e317]:
+          - heading "Environments / Configure github-pages" [level=2] [ref=f7e319]:
+            - link "Environments" [ref=f7e320] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping/settings/environments
+            - text: / Configure
+            - generic [ref=f7e321]: github-pages
+          - generic [ref=f7e322]:
+            - generic [ref=f7e324]:
+              - heading "Deployment protection rules" [level=3] [ref=f7e325]
+              - paragraph [ref=f7e326]: Configure reviewers, timers, and custom rules that must pass before deployments to this environment can proceed.
+              - generic [ref=f7e327]:
+                - generic [ref=f7e329]:
+                  - checkbox "Required reviewers" [ref=f7e330]
+                  - text: Required reviewers
+                  - paragraph [ref=f7e331]: Specify people or teams that may approve workflow runs when they access this environment.
+                - generic [ref=f7e333]:
+                  - checkbox "Wait timer" [ref=f7e334]
+                  - text: Wait timer
+                  - paragraph [ref=f7e335]: Set an amount of time to wait before allowing deployments to proceed.
+                - generic [ref=f7e336]:
+                  - paragraph [ref=f7e337]:
+                    - text: Enable custom rules with GitHub Apps
+                    - generic [ref=f7e338]: Preview
+                  - paragraph [ref=f7e339]:
+                    - link "Learn about existing apps" [ref=f7e340] [cursor=pointer]:
+                      - /url: https://docs.github.com/actions/deployment/protecting-deployments/configuring-custom-deployment-protection-rules#using-existing-custom-deployment-protection-rules
+                    - text: or
+                    - link "create your own protection rules" [ref=f7e341] [cursor=pointer]:
+                      - /url: https://docs.github.com/actions/deployment/targeting-different-environments/using-environments-for-deployment#custom-deployment-protection-rules
+                    - text: so you can deploy with confidence.
+              - generic [ref=f7e343]:
+                - checkbox "Allow administrators to bypass configured protection rules" [checked] [ref=f7e344]
+                - text: Allow administrators to bypass configured protection rules
+              - button "Save protection rules" [ref=f7e345] [cursor=pointer]
+            - generic [ref=f7e348]:
+              - generic [ref=f7e349]:
+                - generic [ref=f7e350]:
+                  - heading "Deployment branches and tags" [level=3] [ref=f7e351]
+                  - paragraph [ref=f7e352]: Limit which branches and tags can deploy to this environment based on rules or naming patterns.
+                - button "Selected branches and tags" [ref=f7e355] [cursor=pointer]
+              - generic [ref=f7e358]:
+                - generic [ref=f7e359]: 1 branch and 0 tags allowed
+                - generic [ref=f7e360]:
+                  - generic [ref=f7e361]: gh-pages
+                  - generic [ref=f7e362]: Currently applies to 1 branch
+                  - generic [ref=f7e364]:
+                    - group [ref=f7e365]:
+                      - button "Edit" [ref=f7e366] [cursor=pointer]
+                    - button "Remove" [ref=f7e370] [cursor=pointer]
+                - group [ref=f7e375]:
+                  - button "Add deployment branch or tag rule" [ref=f7e376] [cursor=pointer]
+            - generic [ref=f7e385]:
+              - heading "Environment secrets" [level=2] [ref=f7e386]
+              - generic [ref=f7e388]:
+                - text: Secrets are encrypted environment variables. They are accessible only by GitHub Actions in the context of this environment by using the
+                - link "secret context" [ref=f7e389] [cursor=pointer]:
+                  - /url: https://docs.github.com/actions/learn-github-actions/contexts#secrets-context
+                - text: .
+              - generic [ref=f7e392]:
+                - paragraph [ref=f7e393]:
+                  - generic [ref=f7e394]: This environment has no secrets.
+                - button "Add environment secret" [ref=f7e396] [cursor=pointer]
+            - generic [ref=f7e402]:
+              - heading "Environment variables" [level=2] [ref=f7e403]
+              - generic [ref=f7e405]:
+                - text: Variables are used for non-sensitive configuration data. They are accessible only by GitHub Actions in the context of this environment by using the
+                - link "variable context" [ref=f7e406] [cursor=pointer]:
+                  - /url: https://docs.github.com/actions/learn-github-actions/contexts#vars-context
+                - text: .
+              - generic [ref=f7e409]:
+                - paragraph [ref=f7e410]:
+                  - generic [ref=f7e411]: This environment has no variables.
+                - button "Add environment variable" [ref=f7e413] [cursor=pointer]
+  - contentinfo [ref=f7e188]:
+    - heading "Footer" [level=2] [ref=f7e189]
+    - generic [ref=f7e190]:
+      - generic [ref=f7e191]:
+        - link "GitHub Homepage" [ref=f7e192] [cursor=pointer]:
+          - /url: https://github.com
+        - generic [ref=f7e195]: © 2026 GitHub, Inc.
+      - navigation "Footer" [ref=f7e196]:
+        - heading "Footer navigation" [level=3] [ref=f7e197]
+        - list "Footer navigation" [ref=f7e198]:
+          - listitem [ref=f7e199]:
+            - link "Terms" [ref=f7e200] [cursor=pointer]:
+              - /url: https://docs.github.com/site-policy/github-terms/github-terms-of-service
+          - listitem [ref=f7e201]:
+            - link "Privacy" [ref=f7e202] [cursor=pointer]:
+              - /url: https://docs.github.com/site-policy/privacy-policies/github-privacy-statement
+          - listitem [ref=f7e203]:
+            - link "Security" [ref=f7e204] [cursor=pointer]:
+              - /url: https://github.com/security
+          - listitem [ref=f7e205]:
+            - link "Status" [ref=f7e206] [cursor=pointer]:
+              - /url: https://www.githubstatus.com/
+          - listitem [ref=f7e207]:
+            - link "Community" [ref=f7e208] [cursor=pointer]:
+              - /url: https://github.community/
+          - listitem [ref=f7e209]:
+            - link "Docs" [ref=f7e210] [cursor=pointer]:
+              - /url: https://docs.github.com/
+          - listitem [ref=f7e211]:
+            - link "Contact" [ref=f7e212] [cursor=pointer]:
+              - /url: https://support.github.com?tags=dotcom-footer
+          - listitem [ref=f7e213]:
+            - button "Manage cookies" [ref=f7e215] [cursor=pointer]
+          - listitem [ref=f7e216]:
+            - button "Do not share my personal information" [ref=f7e218] [cursor=pointer]

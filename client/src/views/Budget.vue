@@ -7,15 +7,15 @@ const editingBudget = ref(null)
 const form = ref({ category: '零食', limit: '' })
 const saving = ref(false)
 
-const CATEGORIES = [
-  '技术', '学习', '吃饭', '零食', '购物', '生活', '社交', '出行'
-]
-
 onMounted(() => {
   if (store.isAuthenticated) {
     store.fetchAll()
   }
 })
+
+const CATEGORIES = computed(() => store.categories.length > 0 ? store.categories : [
+  '技术', '学习', '吃饭', '零食', '购物', '生活', '社交', '出行'
+])
 
 const budgetStatus = computed(() => store.budgetStatus || {})
 

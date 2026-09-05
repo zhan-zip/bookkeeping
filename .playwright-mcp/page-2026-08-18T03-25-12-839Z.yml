@@ -1,0 +1,394 @@
+- generic [ref=f43e2]:
+  - generic [ref=f43e3]:
+    - link "Skip to content" [ref=f43e4] [cursor=pointer]:
+      - /url: "#start-of-content"
+    - banner "Global navigation menu" [ref=f43e8]:
+      - generic [ref=f43e9]:
+        - generic [ref=f43e10]:
+          - button "Open menu" [ref=f43e12] [cursor=pointer]
+          - link "Homepage (g then d)" [ref=f43e15] [cursor=pointer]:
+            - /url: /
+        - generic [ref=f43e18]:
+          - navigation "Breadcrumbs" [ref=f43e19]:
+            - list [ref=f43e20]:
+              - listitem [ref=f43e21]:
+                - link "zhan-zip" [ref=f43e22] [cursor=pointer]:
+                  - /url: /zhan-zip
+              - listitem [ref=f43e24]:
+                - link "bookkeeping" [ref=f43e25] [cursor=pointer]:
+                  - /url: /zhan-zip/bookkeeping
+                - button "Switch repository (alt shift r)" [ref=f43e28] [cursor=pointer]
+          - button "Open quick search dialog, type / to search (forward slash)" [ref=f43e31] [cursor=pointer]
+        - generic [ref=f43e34]:
+          - link "You have unread notifications (g then n)" [ref=f43e495] [cursor=pointer]:
+            - /url: /notifications
+          - button "Open user navigation menu" [ref=f43e39] [cursor=pointer]:
+            - img "User avatar" [ref=f43e40]
+      - heading "Repository navigation" [level=2] [ref=f43e41]
+      - navigation "Repository" [ref=f43e42]:
+        - list [ref=f43e43]:
+          - listitem [ref=f43e44]:
+            - link "Code" [ref=f43e45] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping
+          - listitem [ref=f43e47]:
+            - link "Issues" [ref=f43e48] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping/issues
+          - listitem [ref=f43e50]:
+            - link "Pull requests" [ref=f43e51] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping/pulls
+          - listitem [ref=f43e53]:
+            - link "Actions" [ref=f43e54] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping/actions
+          - listitem [ref=f43e56]:
+            - link "Projects" [ref=f43e57] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping/projects
+        - button "More items, including current item" [ref=f43e61] [cursor=pointer]:
+          - generic [ref=f43e64]:
+            - text: More
+            - generic [ref=f43e65]: items
+  - main [ref=f43e69]:
+    - generic [ref=f43e71]:
+      - 'heading "Settings: zhan-zip/bookkeeping" [level=1] [ref=f43e72]'
+      - generic [ref=f43e74]:
+        - navigation "General settings" [ref=f43e77]:
+          - list [ref=f43e79]:
+            - listitem [ref=f43e80]:
+              - link "General" [ref=f43e81] [cursor=pointer]:
+                - /url: /zhan-zip/bookkeeping/settings
+            - listitem [ref=f43e83]
+            - listitem [ref=f43e84]:
+              - generic [ref=f43e87]:
+                - heading "Access" [level=2] [ref=f43e89]
+                - list "Access" [ref=f43e90]:
+                  - listitem [ref=f43e91]:
+                    - link "Collaborators" [ref=f43e92] [cursor=pointer]:
+                      - /url: /zhan-zip/bookkeeping/settings/access
+            - listitem [ref=f43e94]
+            - listitem [ref=f43e95]:
+              - generic [ref=f43e98]:
+                - heading "Code, planning, and automation" [level=2] [ref=f43e100]
+                - list "Code, planning, and automation" [ref=f43e101]:
+                  - listitem [ref=f43e102]:
+                    - link "Branches" [ref=f43e103] [cursor=pointer]:
+                      - /url: /zhan-zip/bookkeeping/settings/branches
+                  - listitem [ref=f43e105]:
+                    - link "Tags" [ref=f43e106] [cursor=pointer]:
+                      - /url: /zhan-zip/bookkeeping/settings/tag_protection
+                  - listitem [ref=f43e108]:
+                    - button "Rulesets" [ref=f43e109] [cursor=pointer]
+                  - listitem [ref=f43e111]:
+                    - button "Actions" [ref=f43e112] [cursor=pointer]
+                  - listitem [ref=f43e114]:
+                    - link "Webhooks" [ref=f43e115] [cursor=pointer]:
+                      - /url: /zhan-zip/bookkeeping/settings/hooks
+                  - listitem [ref=f43e117]:
+                    - button "Copilot" [ref=f43e118] [cursor=pointer]
+                  - listitem [ref=f43e120]:
+                    - button "Planning" [ref=f43e121] [cursor=pointer]
+                  - listitem [ref=f43e123]:
+                    - link "Environments" [ref=f43e124] [cursor=pointer]:
+                      - /url: /zhan-zip/bookkeeping/settings/environments
+                  - listitem [ref=f43e126]:
+                    - link "Codespaces" [ref=f43e127] [cursor=pointer]:
+                      - /url: /zhan-zip/bookkeeping/settings/codespaces
+                  - listitem [ref=f43e129]:
+                    - link "Pages" [ref=f43e130] [cursor=pointer]:
+                      - /url: /zhan-zip/bookkeeping/settings/pages
+            - listitem [ref=f43e132]
+            - listitem [ref=f43e133]:
+              - generic [ref=f43e136]:
+                - heading "Security and quality" [level=2] [ref=f43e138]
+                - list "Security and quality" [ref=f43e139]:
+                  - listitem [ref=f43e140]:
+                    - link "Advanced Security" [ref=f43e141] [cursor=pointer]:
+                      - /url: /zhan-zip/bookkeeping/settings/security_analysis
+                  - listitem [ref=f43e143]:
+                    - link "Deploy keys" [ref=f43e144] [cursor=pointer]:
+                      - /url: /zhan-zip/bookkeeping/settings/keys
+                  - listitem [ref=f43e146]:
+                    - button "Secrets and variables" [ref=f43e147] [cursor=pointer]
+            - listitem [ref=f43e149]
+            - listitem [ref=f43e150]:
+              - generic [ref=f43e153]:
+                - heading "Integrations" [level=2] [ref=f43e155]
+                - list "Integrations" [ref=f43e156]:
+                  - listitem [ref=f43e157]:
+                    - link "GitHub Apps" [ref=f43e158] [cursor=pointer]:
+                      - /url: /zhan-zip/bookkeeping/settings/installations
+                  - listitem [ref=f43e160]:
+                    - link "Email notifications" [ref=f43e161] [cursor=pointer]:
+                      - /url: /zhan-zip/bookkeeping/settings/notifications
+        - generic [ref=f43e164]:
+          - heading "General" [level=2] [ref=f43e166]
+          - generic [ref=f43e167]:
+            - generic [ref=f43e169]:
+              - term [ref=f43e170]: Repository name
+              - definition [ref=f43e171]:
+                - textbox "Repository name" [ref=f43e172]: bookkeeping
+            - button "Rename" [ref=f43e173] [cursor=pointer]
+          - generic [ref=f43e175]:
+            - checkbox "Template repository" [ref=f43e176]
+            - text: Template repository
+            - generic [ref=f43e177]: Loading
+            - paragraph [ref=f43e179]:
+              - text: Template repositories let users generate new repositories with the same directory structure and files.
+              - link "Learn more about template repositories" [ref=f43e180] [cursor=pointer]:
+                - /url: https://docs.github.com/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template
+              - text: .
+          - generic [ref=f43e181]:
+            - term [ref=f43e182]:
+              - heading "Default branch" [level=2] [ref=f43e184]
+              - paragraph [ref=f43e185]: The default branch is considered the “base” branch in your repository, against which all pull requests and code commits are automatically made, unless you specify a different branch.
+            - definition [ref=f43e186]:
+              - generic [ref=f43e187]: main
+              - generic [ref=f43e190]:
+                - button "Rename branch" [ref=f43e192] [cursor=pointer]
+                - button "Switch to another branch" [ref=f43e193] [cursor=pointer]
+          - heading "Releases" [level=2] [ref=f43e195]
+          - generic [ref=f43e197]:
+            - checkbox "Enable release immutability" [ref=f43e198]
+            - text: Enable release immutability
+            - generic [ref=f43e199]: Loading
+            - paragraph [ref=f43e201]: Disallow assets and tags from being modified once a release is published.
+          - heading "Features" [level=2] [ref=f43e203]
+          - generic [ref=f43e204]:
+            - generic [ref=f43e206]:
+              - group "Wikis" [ref=f43e207]:
+                - checkbox "Wikis" [disabled] [ref=f43e208]
+                - text: Wikis
+                - generic [ref=f43e209]: Loading
+                - paragraph [ref=f43e211]: Wikis host documentation for your repository.
+              - article [ref=f43e212]:
+                - img "wikis" [ref=f43e213]
+                - generic [ref=f43e214]:
+                  - heading "Upgrade or make this repository public to enable Wikis" [level=1] [ref=f43e215]
+                  - paragraph [ref=f43e216]: GitHub Wikis is a simple way to let others contribute content. Any GitHub user can create and edit pages to use for documentation, examples, support, or anything you wish.
+                  - generic [ref=f43e217]:
+                    - link "Upgrade" [ref=f43e218] [cursor=pointer]:
+                      - /url: /account/upgrade
+                    - link "Learn more about wikis" [ref=f43e219] [cursor=pointer]:
+                      - /url: https://docs.github.com/github/building-a-strong-community/about-wikis
+            - generic [ref=f43e221]:
+              - generic [ref=f43e222]:
+                - checkbox "Issues" [checked] [ref=f43e223]
+                - text: Issues
+                - generic [ref=f43e224]: Loading
+                - paragraph [ref=f43e226]: Issues integrate lightweight task tracking into your repository. Keep projects on track with issue labels and milestones, and reference them in commit messages.
+              - generic [ref=f43e227]:
+                - heading "Issue permissions" [level=3] [ref=f43e228]
+                - generic [ref=f43e229]:
+                  - generic [ref=f43e230]:
+                    - 'button "Creation allowed by: All users" [ref=f43e233] [cursor=pointer]'
+                    - generic [ref=f43e236]: Loading
+                  - paragraph [ref=f43e238]: If restricted, issues will still be readable by everyone who can see this repository.
+              - generic [ref=f43e240]:
+                - generic [ref=f43e241]:
+                  - heading "Get organized with issue templates" [level=3] [ref=f43e242]
+                  - paragraph [ref=f43e243]: Give contributors issue templates that help you cut through the noise and help them push your project forward.
+                - link "Set up templates" [ref=f43e245] [cursor=pointer]:
+                  - /url: /zhan-zip/bookkeeping/issues/templates/edit
+            - generic [ref=f43e248]:
+              - checkbox "Sponsorships" [ref=f43e249]
+              - text: Sponsorships
+              - generic [ref=f43e250]: Loading
+              - paragraph [ref=f43e252]: Sponsorships help your community know how to financially support this repository.
+              - generic [ref=f43e254]:
+                - generic [ref=f43e255]:
+                  - heading "Display a \"Sponsor\" button" [level=3] [ref=f43e256]
+                  - paragraph [ref=f43e257]: Add links to GitHub Sponsors or third-party methods your repository accepts for financial contributions to your project.
+                - link "Set up sponsor button" [ref=f43e259] [cursor=pointer]:
+                  - /url: /zhan-zip/bookkeeping/new/main?repository_funding=1
+            - generic [ref=f43e262]:
+              - checkbox "Discussions" [ref=f43e263]
+              - text: Discussions
+              - generic [ref=f43e264]: Loading
+              - paragraph [ref=f43e266]: Discussions is the space for your community to have conversations, ask questions and post answers without opening issues.
+            - generic [ref=f43e268]:
+              - generic [ref=f43e269]:
+                - heading "Get started with Discussions" [level=3] [ref=f43e270]
+                - paragraph [ref=f43e271]: Engage your community by having discussions right in your repository, where your community already lives
+              - button "Set up discussions" [ref=f43e274] [cursor=pointer]
+            - generic [ref=f43e277]:
+              - checkbox "Projects" [checked] [ref=f43e278]
+              - text: Projects
+              - generic [ref=f43e279]: Loading
+              - paragraph [ref=f43e281]: Projects on GitHub are created at the repository owner's level (organization or user) and can be linked to a repository's Projects tab. Projects are suitable for cross-repository development efforts such as feature work, complex product roadmaps or even Issue triage.
+            - generic [ref=f43e283]:
+              - generic [ref=f43e284]:
+                - checkbox "Pull requests" [checked] [ref=f43e285]
+                - text: Pull requests
+                - generic [ref=f43e286]: Loading
+                - paragraph [ref=f43e288]: Pull requests allow others to suggest changes to your repository.
+              - generic [ref=f43e289]:
+                - heading "Pull request permissions" [level=3] [ref=f43e290]
+                - generic [ref=f43e291]:
+                  - generic [ref=f43e292]:
+                    - 'button "Creation allowed by: All users" [ref=f43e295] [cursor=pointer]'
+                    - generic [ref=f43e298]: Loading
+                  - paragraph [ref=f43e300]: If restricted, pull requests will still be readable by everyone who can see this repository.
+          - heading "Pull Requests" [level=2] [ref=f43e302]
+          - paragraph [ref=f43e303]: When merging pull requests, you can allow any combination of merge commits, squashing, or rebasing. At least one option must be enabled. If you have linear history requirement enabled on any protected branch, you must enable squashing or rebasing.
+          - generic [ref=f43e304]:
+            - list "Pull Requests" [ref=f43e306]:
+              - listitem [ref=f43e307]:
+                - generic [ref=f43e309]:
+                  - text: Allow merge commits
+                  - generic [ref=f43e310]: Loading
+                  - checkbox "Allow merge commits" [checked] [ref=f43e312]
+                  - paragraph [ref=f43e313]: Add all commits from the head branch to the base branch with a merge commit.
+                  - generic [ref=f43e314]:
+                    - heading "Default commit message" [level=3] [ref=f43e315]
+                    - paragraph [ref=f43e316]: Presented when merging a pull request with merge.
+                    - group [ref=f43e317]:
+                      - button "Default message" [ref=f43e318] [cursor=pointer]
+              - listitem [ref=f43e319]:
+                - generic [ref=f43e321]:
+                  - text: Allow squash merging
+                  - generic [ref=f43e322]: Loading
+                  - checkbox "Allow squash merging" [checked] [ref=f43e324]
+                  - paragraph [ref=f43e325]: Combine all commits from the head branch into a single commit in the base branch.
+                  - generic [ref=f43e326]:
+                    - heading "Default commit message" [level=3] [ref=f43e327]
+                    - paragraph [ref=f43e328]: Presented when merging a pull request with squash.
+                    - group [ref=f43e329]:
+                      - button "Default message" [ref=f43e330] [cursor=pointer]
+              - listitem [ref=f43e331]:
+                - generic [ref=f43e333]:
+                  - text: Allow rebase merging
+                  - generic [ref=f43e334]: Loading
+                  - checkbox "Allow rebase merging" [checked] [ref=f43e336]
+                  - paragraph [ref=f43e337]: Add all commits from the head branch onto the base branch individually.
+            - paragraph [ref=f43e338]: Control how and when users are prompted to update their branches if there are new changes available in the base branch.
+            - list [ref=f43e340]:
+              - listitem [ref=f43e341]:
+                - generic [ref=f43e343]:
+                  - text: Always suggest updating pull request branches
+                  - generic [ref=f43e344]: Loading
+                  - checkbox "Always suggest updating pull request branches" [ref=f43e346]
+                  - paragraph [ref=f43e347]: Whenever there are new changes available in the base branch, present an “update branch” option in the pull request.
+            - paragraph [ref=f43e348]: You can allow setting pull requests to merge automatically once all required reviews and status checks have passed.
+            - list [ref=f43e350]:
+              - listitem [ref=f43e351]:
+                - generic [ref=f43e353]:
+                  - text: Allow auto-merge
+                  - generic [ref=f43e354]: Loading
+                  - checkbox "Allow auto-merge" [disabled] [ref=f43e356]
+                  - paragraph [ref=f43e357]:
+                    - text: Waits for merge requirements to be met and then merges automatically.
+                    - link "Why is this option disabled?" [ref=f43e358] [cursor=pointer]:
+                      - /url: https://docs.github.com/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/automatically-merging-a-pull-request
+            - paragraph [ref=f43e359]: After pull requests are merged, you can have head branches deleted automatically.
+            - list [ref=f43e361]:
+              - listitem [ref=f43e362]:
+                - generic [ref=f43e364]:
+                  - text: Automatically delete head branches
+                  - generic [ref=f43e365]: Loading
+                  - checkbox "Automatically delete head branches" [ref=f43e367]
+                  - paragraph [ref=f43e368]: Deleted branches will still be able to be restored.
+          - heading "Commits" [level=2] [ref=f43e370]
+          - generic [ref=f43e371]:
+            - generic [ref=f43e374]:
+              - checkbox "Require contributors to sign off on web-based commits" [ref=f43e375]
+              - text: Require contributors to sign off on web-based commits
+              - generic [ref=f43e376]: Loading
+              - paragraph [ref=f43e378]:
+                - text: Enabling this setting will require contributors to sign off on commits made through GitHub’s web interface. Signing off is a way for contributors to affirm that their commit complies with the repository's terms, commonly the
+                - link "Developer Certificate of Origin (DCO)" [ref=f43e379] [cursor=pointer]:
+                  - /url: https://developercertificate.org
+                - text: .
+                - link "Learn more about signing off on commits" [ref=f43e380] [cursor=pointer]:
+                  - /url: https://docs.github.com/organizations/managing-organization-settings/managing-the-commit-signoff-policy-for-your-organization
+                - text: .
+            - generic [ref=f43e383]:
+              - checkbox "Allow comments on individual commits" [checked] [ref=f43e384]
+              - text: Allow comments on individual commits
+              - generic [ref=f43e385]: Loading
+              - paragraph [ref=f43e387]:
+                - text: Enabling this setting will allow anyone who can view this repository to add
+                - link "commit comments" [ref=f43e388] [cursor=pointer]:
+                  - /url: https://docs.github.com/en/rest/guides/working-with-comments?apiVersion=2022-11-28#commit-comments
+                - text: . Existing commit comments are not affected by this setting and will remain viewable, editable, and deletable.
+          - heading "Archives" [level=2] [ref=f43e390]
+          - paragraph [ref=f43e391]: When creating source code archives, you can choose to include files stored using Git LFS in the archive.
+          - list [ref=f43e394]:
+            - listitem [ref=f43e395]:
+              - generic [ref=f43e397]:
+                - text: Include Git LFS objects in archives
+                - checkbox "Include Git LFS objects in archives" [ref=f43e399]
+                - paragraph [ref=f43e400]: Git LFS usage in archives is billed at the same rate as usage with the client.
+          - heading "Issues" [level=2] [ref=f43e402]
+          - generic [ref=f43e403]:
+            - paragraph [ref=f43e404]: After merging a pull request, linked issues can be closed automatically.
+            - list [ref=f43e406]:
+              - listitem [ref=f43e407]:
+                - generic [ref=f43e409]:
+                  - text: Auto-close issues with merged linked pull requests
+                  - generic [ref=f43e410]: Loading
+                  - checkbox "Auto-close issues with merged linked pull requests" [checked] [ref=f43e412]
+                  - paragraph [ref=f43e413]: Whenever linked pull requests have merged, auto-close the issue.
+          - heading "Danger Zone" [level=2] [ref=f43e415]
+          - list [ref=f43e417]:
+            - listitem [ref=f43e418]:
+              - generic [ref=f43e421]:
+                - button "Change visibility" [ref=f43e422] [cursor=pointer]
+                - menu "Change visibility" [ref=f43e501]:
+                  - menuitem "Change to public" [active] [ref=f43e502] [cursor=pointer]
+              - generic [ref=f43e425]:
+                - strong [ref=f43e426]: Change repository visibility
+                - generic [ref=f43e427]: This repository is currently private.
+            - listitem [ref=f43e428]:
+              - generic [ref=f43e429]:
+                - strong [ref=f43e430]: Disable branch protection rules
+                - paragraph [ref=f43e431]: Disable branch protection rules enforcement and APIs
+              - button "Disable branch protection rules" [ref=f43e433] [cursor=pointer]
+            - listitem [ref=f43e436]:
+              - generic [ref=f43e438]:
+                - strong [ref=f43e439]: Transfer ownership
+                - paragraph [ref=f43e440]: Transfer this repository to another user or to an organization where you have the ability to create repositories.
+              - link "Transfer" [ref=f43e441] [cursor=pointer]:
+                - /url: /zhan-zip/bookkeeping/transfer
+            - listitem [ref=f43e444]:
+              - generic [ref=f43e445]:
+                - strong [ref=f43e446]: Archive this repository
+                - paragraph [ref=f43e447]: Mark this repository as archived and read-only.
+              - button "Archive this repository" [ref=f43e449] [cursor=pointer]
+            - listitem [ref=f43e452]:
+              - button "Delete this repository" [ref=f43e455] [cursor=pointer]
+              - generic [ref=f43e459]:
+                - strong [ref=f43e460]: Delete this repository
+                - paragraph [ref=f43e461]: Once you delete a repository, there is no going back. Please be certain.
+  - contentinfo [ref=f43e462]:
+    - heading "Footer" [level=2] [ref=f43e463]
+    - generic [ref=f43e464]:
+      - generic [ref=f43e465]:
+        - link "GitHub Homepage" [ref=f43e466] [cursor=pointer]:
+          - /url: https://github.com
+        - generic [ref=f43e469]: © 2026 GitHub, Inc.
+      - navigation "Footer" [ref=f43e470]:
+        - heading "Footer navigation" [level=3] [ref=f43e471]
+        - list "Footer navigation" [ref=f43e472]:
+          - listitem [ref=f43e473]:
+            - link "Terms" [ref=f43e474] [cursor=pointer]:
+              - /url: https://docs.github.com/site-policy/github-terms/github-terms-of-service
+          - listitem [ref=f43e475]:
+            - link "Privacy" [ref=f43e476] [cursor=pointer]:
+              - /url: https://docs.github.com/site-policy/privacy-policies/github-privacy-statement
+          - listitem [ref=f43e477]:
+            - link "Security" [ref=f43e478] [cursor=pointer]:
+              - /url: https://github.com/security
+          - listitem [ref=f43e479]:
+            - link "Status" [ref=f43e480] [cursor=pointer]:
+              - /url: https://www.githubstatus.com/
+          - listitem [ref=f43e481]:
+            - link "Community" [ref=f43e482] [cursor=pointer]:
+              - /url: https://github.community/
+          - listitem [ref=f43e483]:
+            - link "Docs" [ref=f43e484] [cursor=pointer]:
+              - /url: https://docs.github.com/
+          - listitem [ref=f43e485]:
+            - link "Contact" [ref=f43e486] [cursor=pointer]:
+              - /url: https://support.github.com?tags=dotcom-footer
+          - listitem [ref=f43e487]:
+            - button "Manage cookies" [ref=f43e489] [cursor=pointer]
+          - listitem [ref=f43e490]:
+            - button "Do not share my personal information" [ref=f43e492] [cursor=pointer]

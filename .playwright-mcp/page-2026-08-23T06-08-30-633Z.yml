@@ -1,0 +1,208 @@
+- generic [ref=f5e2]:
+  - generic [ref=f5e3]:
+    - link "Skip to content" [ref=f5e4] [cursor=pointer]:
+      - /url: "#start-of-content"
+    - banner "Global navigation menu" [ref=f5e8]:
+      - generic [ref=f5e9]:
+        - generic [ref=f5e10]:
+          - button "Open menu" [ref=f5e12] [cursor=pointer]
+          - link "Homepage (g then d)" [ref=f5e15] [cursor=pointer]:
+            - /url: /
+        - generic [ref=f5e18]:
+          - navigation "Breadcrumbs" [ref=f5e19]:
+            - list [ref=f5e20]:
+              - listitem [ref=f5e21]:
+                - link "zhan-zip" [ref=f5e22] [cursor=pointer]:
+                  - /url: /zhan-zip
+              - listitem [ref=f5e24]:
+                - link "bookkeeping" [ref=f5e25] [cursor=pointer]:
+                  - /url: /zhan-zip/bookkeeping
+                - button "Switch repository (alt shift r)" [ref=f5e26] [cursor=pointer]
+          - button "Open quick search dialog, type / to search (forward slash)" [ref=f5e29] [cursor=pointer]
+        - generic [ref=f5e32]:
+          - link "You have unread notifications (g then n)" [ref=f5e249] [cursor=pointer]:
+            - /url: /notifications
+          - button "Open user navigation menu" [ref=f5e37] [cursor=pointer]:
+            - img "User avatar" [ref=f5e38]
+      - heading "Repository navigation" [level=2] [ref=f5e39]
+      - navigation "Repository" [ref=f5e40]:
+        - list [ref=f5e41]:
+          - listitem [ref=f5e42]:
+            - link "Code" [ref=f5e43] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping
+          - listitem [ref=f5e45]:
+            - link "Issues" [ref=f5e46] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping/issues
+          - listitem [ref=f5e48]:
+            - link "Pull requests" [ref=f5e49] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping/pulls
+          - listitem [ref=f5e51]:
+            - link "Actions" [ref=f5e52] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping/actions
+          - listitem [ref=f5e54]:
+            - link "Projects" [ref=f5e55] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping/projects
+        - button "More items" [ref=f5e68] [cursor=pointer]:
+          - generic [ref=f5e71]:
+            - text: More
+            - generic [ref=f5e72]: items
+  - main [ref=f5e76]:
+    - generic [ref=f5e281]:
+      - generic [ref=f5e284]:
+        - link "Deploy to GitHub Pages" [ref=f5e287] [cursor=pointer]:
+          - /url: /zhan-zip/bookkeeping/actions/workflows/deploy.yml
+        - generic [ref=f5e291]:
+          - generic [ref=f5e292]:
+            - img "failed:" [ref=f5e296]
+            - 'heading "ci: 修复 GitHub Pages 部署 - 移除环境保护限制 #2" [level=1] [ref=f5e298]'
+          - group [ref=f5e302]:
+            - img "Show options" [ref=f5e304] [cursor=pointer]
+        - button [ref=f5e307] [cursor=pointer]:
+          - heading "Summary" [level=2] [ref=f5e311]
+      - generic [ref=f5e317]:
+        - region "Workflow run summary" [ref=f5e318]:
+          - generic [ref=f5e319]:
+            - generic [ref=f5e320]:
+              - generic [ref=f5e321]: Triggered via push August 23, 2026 14:043 minutes ago
+              - generic [ref=f5e322]:
+                - link [ref=f5e323] [cursor=pointer]:
+                  - /url: /zhan-zip
+                  - img "@zhan-zip" [ref=f5e324]
+                  - text: zhan-zip
+                - generic [ref=f5e325]:
+                  - generic [ref=f5e326]: pushed
+                  - link "3beef6c" [ref=f5e327] [cursor=pointer]:
+                    - /url: /zhan-zip/bookkeeping/commit/3beef6c7dcc94a6ba6e8aa1ef289dd29fce861ae
+                - link "main" [ref=f5e330] [cursor=pointer]:
+                  - /url: /zhan-zip/bookkeeping/tree/refs/heads/main
+            - generic [ref=f5e332]:
+              - generic [ref=f5e333]: Status
+              - text: Failure
+            - generic [ref=f5e334]:
+              - generic [ref=f5e335]: Total duration
+              - link "33s" [ref=f5e336] [cursor=pointer]:
+                - /url: /zhan-zip/bookkeeping/actions/runs/32621983140/usage
+            - generic [ref=f5e337]:
+              - generic [ref=f5e338]: Artifacts
+              - link "1" [ref=f5e339] [cursor=pointer]:
+                - /url: "#artifacts"
+        - region "Workflow run graph" [ref=f5e340]:
+          - generic [ref=f5e342]:
+            - generic [ref=f5e344]:
+              - heading [level=2] [ref=f5e345]:
+                - link "deploy.yml" [ref=f5e346] [cursor=pointer]:
+                  - /url: /zhan-zip/bookkeeping/actions/runs/32621983140/workflow
+              - generic [ref=f5e347]: "on: push"
+            - generic [ref=f5e349]:
+              - generic [ref=f5e350]:
+                - 'link "completed successfully: build 22s" [ref=f5e354] [cursor=pointer]':
+                  - /url: /zhan-zip/bookkeeping/actions/runs/32621983140/job/97151355419
+                  - generic [ref=f5e356]:
+                    - img "completed successfully:" [ref=f5e358]
+                    - generic [ref=f5e360]: build
+                    - generic [ref=f5e362]: 22s
+                - 'link "failed: deploy 3s" [ref=f5e367] [cursor=pointer]':
+                  - /url: /zhan-zip/bookkeeping/actions/runs/32621983140/job/97151401619
+                  - generic [ref=f5e369]:
+                    - img "failed:" [ref=f5e371]
+                    - generic [ref=f5e373]: deploy
+                    - generic [ref=f5e375]: 3s
+              - generic [ref=f5e377]:
+                - paragraph [ref=f5e378]: Oh hello! Nice to see you.
+                - paragraph [ref=f5e379]:
+                  - text: Made with ❤️ by
+                  - link [ref=f5e380] [cursor=pointer]:
+                    - /url: https://actions.github.io/humans.txt
+                    - text: humans.txt
+            - generic [ref=f5e381]:
+              - button "Fit to window" [disabled] [ref=f5e382]
+              - generic [ref=f5e383]:
+                - button "Zoom out" [disabled] [ref=f5e385]
+                - button "Zoom in" [ref=f5e387] [cursor=pointer]
+        - region "Annotations" [ref=f5e389]:
+          - generic [ref=f5e390]:
+            - generic [ref=f5e392]:
+              - heading "Annotations" [level=2] [ref=f5e393]
+              - generic [ref=f5e394]: 3 errors and 2 warnings
+            - table [ref=f5e395]:
+              - rowgroup [ref=f5e396]:
+                - row [ref=f5e397]:
+                  - 'cell "deploy Error: Failed to create deployment (status: 400) with build version 3beef6c7dcc94a6ba6e8aa1ef289dd29fce861ae. Request ID E800:29D681:17E45A:4E65EC:6A8A8D96 Responded with: Missing environment. Ensure your workflow''s deployment job has an environment. Example: jobs: deploy: environment: name: github-pages Show more" [ref=f5e398]':
+                    - generic [ref=f5e403]:
+                      - link [ref=f5e404] [cursor=pointer]:
+                        - /url: /zhan-zip/bookkeeping/actions/runs/32621983140/job/97151401619#step:2:33
+                        - strong [ref=f5e405]: deploy
+                      - generic [ref=f5e406]:
+                        - generic [ref=f5e407]: "Error: Failed to create deployment (status: 400) with build version 3beef6c7dcc94a6ba6e8aa1ef289dd29fce861ae. Request ID E800:29D681:17E45A:4E65EC:6A8A8D96 Responded with: Missing environment. Ensure your workflow's deployment job has an environment. Example: jobs: deploy: environment: name: github-pages"
+                        - button "Show more" [ref=f5e409] [cursor=pointer]
+                - row [ref=f5e410]:
+                  - 'cell "deploy HttpError: Missing environment. Ensure your workflow''s deployment job has an environment. Example: jobs: deploy: environment: name: github-pages at /home/runner/work/_actions/actions/deploy-pages/v4/node_modules/@octokit/request/dist-node/index.js:124:1 at processTicksAndRejections (node:internal/process/task_queues:104:5) at createPagesDeployment (/home/runner/work/_actions/actions/deploy-pages/v4/src/internal/api-client.js:125:1) at Deployment.create (/home/runner/work/_actions/actions/deploy-pages/v4/src/internal/deployment.js:74:1) at main (/home/runner/work/_actions/actions/deploy-pages/v4/src/index.js:30:1) Show more" [ref=f5e411]':
+                    - generic [ref=f5e416]:
+                      - link [ref=f5e417] [cursor=pointer]:
+                        - /url: /zhan-zip/bookkeeping/actions/runs/32621983140/job/97151401619#step:2:22
+                        - strong [ref=f5e418]: deploy
+                      - generic [ref=f5e419]:
+                        - generic [ref=f5e420]: "HttpError: Missing environment. Ensure your workflow's deployment job has an environment. Example: jobs: deploy: environment: name: github-pages at /home/runner/work/_actions/actions/deploy-pages/v4/node_modules/@octokit/request/dist-node/index.js:124:1 at processTicksAndRejections (node:internal/process/task_queues:104:5) at createPagesDeployment (/home/runner/work/_actions/actions/deploy-pages/v4/src/internal/api-client.js:125:1) at Deployment.create (/home/runner/work/_actions/actions/deploy-pages/v4/src/internal/deployment.js:74:1) at main (/home/runner/work/_actions/actions/deploy-pages/v4/src/index.js:30:1)"
+                        - button "Show more" [ref=f5e422] [cursor=pointer]
+                - row [ref=f5e423]:
+                  - cell "deploy Creating Pages deployment failed" [ref=f5e424]:
+                    - generic [ref=f5e429]:
+                      - link [ref=f5e430] [cursor=pointer]:
+                        - /url: /zhan-zip/bookkeeping/actions/runs/32621983140/job/97151401619#step:2:21
+                        - strong [ref=f5e431]: deploy
+                      - generic [ref=f5e432]: Creating Pages deployment failed
+                - row [ref=f5e435]:
+                  - cell [ref=f5e436]:
+                    - generic [ref=f5e441]:
+                      - link [ref=f5e442] [cursor=pointer]:
+                        - /url: /zhan-zip/bookkeeping/actions/runs/32621983140/job/97151355419#step:13:2
+                        - strong [ref=f5e443]: build
+                      - generic [ref=f5e444]:
+                        - generic [ref=f5e446]:
+                          - text: "Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4, actions/upload-artifact@v4. For more information see:"
+                          - link "https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/" [ref=f5e447] [cursor=pointer]:
+                            - /url: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+                        - button "Show more" [ref=f5e448] [cursor=pointer]
+                - row [ref=f5e449]:
+                  - cell [ref=f5e450]:
+                    - generic [ref=f5e455]:
+                      - link [ref=f5e456] [cursor=pointer]:
+                        - /url: /zhan-zip/bookkeeping/actions/runs/32621983140/job/97151401619#step:3:2
+                        - strong [ref=f5e457]: deploy
+                      - generic [ref=f5e458]:
+                        - generic [ref=f5e460]:
+                          - text: "Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/deploy-pages@v4. For more information see:"
+                          - link "https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/" [ref=f5e461] [cursor=pointer]:
+                            - /url: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+                        - button "Show more" [ref=f5e462] [cursor=pointer]
+        - region "Artifacts" [ref=f5e463]:
+          - generic [ref=f5e464]:
+            - generic [ref=f5e466]:
+              - heading "Artifacts" [level=2] [ref=f5e467]
+              - generic [ref=f5e468]: Produced during runtime
+            - table [ref=f5e469]:
+              - rowgroup [ref=f5e470]:
+                - row [ref=f5e471]:
+                  - columnheader "Name" [ref=f5e472]
+                  - columnheader "Size" [ref=f5e473]
+                  - columnheader "Digest" [ref=f5e474]
+                  - cell [ref=f5e475]
+              - rowgroup [ref=f5e476]:
+                - row [ref=f5e477]:
+                  - cell [ref=f5e478]:
+                    - generic [ref=f5e479]:
+                      - link "Download github-pages (opens in a new tab)" [ref=f5e480] [cursor=pointer]:
+                        - /url: /zhan-zip/bookkeeping/actions/runs/32621983140/artifacts/9488614109
+                      - link "Download github-pages (opens in a new tab)" [ref=f5e484] [cursor=pointer]:
+                        - /url: /zhan-zip/bookkeeping/actions/runs/32621983140/artifacts/9488614109
+                        - text: github-pages
+                  - cell "482 KB" [ref=f5e485]
+                  - cell [ref=f5e486]:
+                    - generic [ref=f5e487]:
+                      - code [ref=f5e488]: sha256:1a62e2d2af07d9fdc4db9ceed429a624fd69d8e307cff2a7693ef75d178be9e0
+                      - button "Copy artifact digest" [ref=f5e490] [cursor=pointer]
+                  - cell [ref=f5e495]:
+                    - generic [ref=f5e496]:
+                      - link "Download github-pages (opens in a new tab)" [ref=f5e497] [cursor=pointer]:
+                        - /url: /zhan-zip/bookkeeping/actions/runs/32621983140/artifacts/9488614109
+                      - button "Delete github-pages" [ref=f5e499] [cursor=pointer]

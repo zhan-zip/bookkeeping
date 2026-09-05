@@ -1,0 +1,211 @@
+- generic [active] [ref=f3e1]:
+  - generic [ref=f3e2]:
+    - generic [ref=f3e3]:
+      - link "Skip to content" [ref=f3e4] [cursor=pointer]:
+        - /url: "#start-of-content"
+      - banner "Global navigation menu" [ref=f3e8]:
+        - generic [ref=f3e9]:
+          - generic [ref=f3e10]:
+            - button "Open menu" [ref=f3e12] [cursor=pointer]
+            - link "Homepage (g then d)" [ref=f3e15] [cursor=pointer]:
+              - /url: /
+          - generic [ref=f3e18]:
+            - navigation "Breadcrumbs" [ref=f3e19]:
+              - list [ref=f3e20]:
+                - listitem [ref=f3e21]:
+                  - link "zhan-zip" [ref=f3e22] [cursor=pointer]:
+                    - /url: /zhan-zip
+                - listitem [ref=f3e24]:
+                  - link "bookkeeping" [ref=f3e25] [cursor=pointer]:
+                    - /url: /zhan-zip/bookkeeping
+                  - button "Switch repository (alt shift r)" [ref=f3e26] [cursor=pointer]
+            - button "Open quick search dialog, type / to search (forward slash)" [ref=f3e29] [cursor=pointer]
+          - generic [ref=f3e32]:
+            - link "You have unread notifications (g then n)" [ref=f3e33] [cursor=pointer]:
+              - /url: /notifications
+            - button "Open user navigation menu" [ref=f3e37] [cursor=pointer]:
+              - img "User avatar" [ref=f3e38]
+        - heading "Repository navigation" [level=2] [ref=f3e39]
+        - navigation "Repository" [ref=f3e40]:
+          - list [ref=f3e41]:
+            - listitem [ref=f3e42]:
+              - link "Code" [ref=f3e43] [cursor=pointer]:
+                - /url: /zhan-zip/bookkeeping
+            - listitem [ref=f3e45]:
+              - link "Issues" [ref=f3e46] [cursor=pointer]:
+                - /url: /zhan-zip/bookkeeping/issues
+            - listitem [ref=f3e48]:
+              - link "Pull requests" [ref=f3e49] [cursor=pointer]:
+                - /url: /zhan-zip/bookkeeping/pulls
+            - listitem [ref=f3e51]:
+              - link "Actions" [ref=f3e52] [cursor=pointer]:
+                - /url: /zhan-zip/bookkeeping/actions
+            - listitem [ref=f3e54]:
+              - link "Projects" [ref=f3e55] [cursor=pointer]:
+                - /url: /zhan-zip/bookkeeping/projects
+          - button "More items" [ref=f3e59] [cursor=pointer]:
+            - generic [ref=f3e62]:
+              - text: More
+              - generic [ref=f3e63]: items
+    - main [ref=f3e67]:
+      - generic [ref=f3e80]:
+        - generic [ref=f3e85]:
+          - generic [ref=f3e87]:
+            - 'button "Watch: Participating in zhan-zip/bookkeeping. Click to change subscription settings." [ref=f3e88] [cursor=pointer]':
+              - generic [ref=f3e89]:
+                - generic [ref=f3e90]: Watch
+                - generic:
+                  - generic: "0"
+                  - generic: (0)
+            - button "You own zhan-zip/bookkeeping and are not a member of any organizations" [ref=f3e91]:
+              - generic [ref=f3e93]:
+                - text: Fork
+                - generic [ref=f3e94]: "0"
+                - generic [ref=f3e95]: (0)
+            - button "Star zhan-zip/bookkeeping" [ref=f3e97] [cursor=pointer]
+          - paragraph [ref=f3e100]: 个人记账软件：QQ 机器人 MCP 记账 + 手机 PWA 只读展示
+          - list "Repository details" [ref=f3e101]:
+            - listitem [ref=f3e102]:
+              - link "0 stars" [ref=f3e103] [cursor=pointer]:
+                - /url: /zhan-zip/bookkeeping/stargazers
+            - listitem [ref=f3e106]:
+              - link "0 forks" [ref=f3e107] [cursor=pointer]:
+                - /url: /zhan-zip/bookkeeping/forks
+            - listitem [ref=f3e110]:
+              - link "0 watching" [ref=f3e111] [cursor=pointer]:
+                - /url: /zhan-zip/bookkeeping/watchers
+            - listitem [ref=f3e114]:
+              - link "2 branches" [ref=f3e115] [cursor=pointer]:
+                - /url: /zhan-zip/bookkeeping/branches
+            - listitem [ref=f3e118]:
+              - link "0 tags" [ref=f3e119] [cursor=pointer]:
+                - /url: /zhan-zip/bookkeeping/tags
+            - listitem [ref=f3e122]:
+              - link "Activity" [ref=f3e123] [cursor=pointer]:
+                - /url: /zhan-zip/bookkeeping/pulse
+          - generic [ref=f3e126]: Public repository
+        - generic [ref=f3e131]:
+          - generic [ref=f3e134]:
+            - generic [ref=f3e135]:
+              - button "gh-pages branch" [ref=f3e138] [cursor=pointer]:
+                - generic [ref=f3e139]: gh-pages
+              - generic [ref=f3e143]:
+                - button "Code" [ref=f3e144] [cursor=pointer]
+                - button "Open more actions menu" [ref=f3e148] [cursor=pointer]
+            - generic [ref=f3e151]:
+              - generic [ref=f3e152]:
+                - generic [ref=f3e154]:
+                  - heading "Latest commit" [level=2] [ref=f3e155]
+                  - generic [ref=f3e156]:
+                    - generic [ref=f3e158]:
+                      - link [ref=f3e159] [cursor=pointer]:
+                        - /url: /zhan-zip
+                        - img "zhan-zip" [ref=f3e160]
+                      - link "commits by zhan-zip" [ref=f3e161] [cursor=pointer]:
+                        - /url: /zhan-zip/bookkeeping/commits?author=zhan-zip
+                        - text: zhan-zip
+                    - generic "Aug 18, 2026, 11:18 GMT+8" [ref=f3e163]: Aug 18, 20265 days ago
+                  - generic [ref=f3e165]:
+                    - heading "History" [level=2] [ref=f3e166]
+                    - button "Open commit details" [ref=f3e168] [cursor=pointer]
+                    - link "View commit history for this file." [ref=f3e172] [cursor=pointer]:
+                      - /url: /zhan-zip/bookkeeping/commits/gh-pages/
+                - heading "Folders and files" [level=2] [ref=f3e174]
+                - table "Folders and files" [ref=f3e175]:
+                  - rowgroup:
+                    - row "Name Last commit date":
+                      - columnheader "Name"
+                      - columnheader "Last commit date"
+                  - rowgroup
+              - generic [ref=f3e177]:
+                - generic [ref=f3e178]:
+                  - heading "Repository files navigation" [level=2] [ref=f3e179]
+                  - navigation "Repository files" [ref=f3e180]:
+                    - list [ref=f3e181]:
+                      - listitem [ref=f3e182]:
+                        - link "README" [ref=f3e183] [cursor=pointer]:
+                          - /url: "#"
+                - generic [ref=f3e186]:
+                  - heading "Add a README" [level=2] [ref=f3e190]
+                  - paragraph [ref=f3e191]: Help people interested in this repository understand your project.
+                  - link "Add a README" [ref=f3e193] [cursor=pointer]:
+                    - /url: /zhan-zip/bookkeeping/new/gh-pages?filename=README.md
+          - generic [ref=f3e198]:
+            - generic [ref=f3e199]:
+              - heading [level=2] [ref=f3e200]:
+                - link "Releases" [ref=f3e202] [cursor=pointer]:
+                  - /url: /zhan-zip/bookkeeping/releases
+              - generic [ref=f3e203]: No releases published
+              - link "Create a new release" [ref=f3e205] [cursor=pointer]:
+                - /url: /zhan-zip/bookkeeping/releases/new
+            - generic [ref=f3e206]:
+              - heading "Deployments (1)" [level=2] [ref=f3e207]:
+                - generic [ref=f3e208]:
+                  - link "Deployments" [ref=f3e209] [cursor=pointer]:
+                    - /url: /zhan-zip/bookkeeping/deployments
+                  - generic [ref=f3e210]: "1"
+                  - generic [ref=f3e211]: (1)
+              - list [ref=f3e212]:
+                - listitem [ref=f3e213]:
+                  - link "github-pages" [ref=f3e217] [cursor=pointer]:
+                    - /url: /zhan-zip/bookkeeping/deployments/github-pages
+                  - generic [ref=f3e218]: Aug 18, 20265 days ago
+            - generic [ref=f3e219]:
+              - heading [level=2] [ref=f3e220]:
+                - link "Packages" [ref=f3e222] [cursor=pointer]:
+                  - /url: /users/zhan-zip/packages?repo_name=bookkeeping
+              - generic [ref=f3e223]:
+                - text: No packages published
+                - link "Publish your first package" [ref=f3e224] [cursor=pointer]:
+                  - /url: /zhan-zip/bookkeeping/packages
+            - generic [ref=f3e225]:
+              - heading "Contributors (1)" [level=2] [ref=f3e226]:
+                - generic [ref=f3e227]:
+                  - link "Contributors" [ref=f3e228] [cursor=pointer]:
+                    - /url: /zhan-zip/bookkeeping/graphs/contributors
+                  - generic [ref=f3e229]: "1"
+                  - generic [ref=f3e230]: (1)
+              - list [ref=f3e231]:
+                - listitem [ref=f3e232]:
+                  - link [ref=f3e233] [cursor=pointer]:
+                    - /url: /zhan-zip
+                    - img "@zhan-zip" [ref=f3e234]
+                  - generic "zhan-zip" [ref=f3e235]:
+                    - link [ref=f3e236] [cursor=pointer]:
+                      - /url: /zhan-zip
+                      - strong [ref=f3e237]: zhan-zip
+            - generic [ref=f3e238]:
+              - heading "Languages" [level=2] [ref=f3e239]
+              - generic [ref=f3e241]:
+                - 'progressbar "Python: 36.5%" [ref=f3e242]'
+                - 'progressbar "Vue: 33.1%" [ref=f3e243]'
+                - 'progressbar "JavaScript: 15.8%" [ref=f3e244]'
+                - 'progressbar "CSS: 13.7%" [ref=f3e245]'
+                - 'progressbar "HTML: 0.9%" [ref=f3e246]'
+              - list [ref=f3e247]:
+                - listitem [ref=f3e248]:
+                  - link "Python 36.5%" [ref=f3e249] [cursor=pointer]:
+                    - /url: /zhan-zip/bookkeeping/search?l=python
+                    - generic [ref=f3e251]: Python
+                    - generic [ref=f3e252]: 36.5%
+                - listitem [ref=f3e253]:
+                  - link "Vue 33.1%" [ref=f3e254] [cursor=pointer]:
+                    - /url: /zhan-zip/bookkeeping/search?l=vue
+                    - generic [ref=f3e256]: Vue
+                    - generic [ref=f3e257]: 33.1%
+                - listitem [ref=f3e258]:
+                  - link "JavaScript 15.8%" [ref=f3e259] [cursor=pointer]:
+                    - /url: /zhan-zip/bookkeeping/search?l=javascript
+                    - generic [ref=f3e261]: JavaScript
+                    - generic [ref=f3e262]: 15.8%
+                - listitem [ref=f3e263]:
+                  - link "CSS 13.7%" [ref=f3e264] [cursor=pointer]:
+                    - /url: /zhan-zip/bookkeeping/search?l=css
+                    - generic [ref=f3e266]: CSS
+                    - generic [ref=f3e267]: 13.7%
+                - listitem [ref=f3e268]:
+                  - link "HTML 0.9%" [ref=f3e269] [cursor=pointer]:
+                    - /url: /zhan-zip/bookkeeping/search?l=html
+                    - generic [ref=f3e271]: HTML
+                    - generic [ref=f3e272]: 0.9%
+  - alert [ref=f3e276]

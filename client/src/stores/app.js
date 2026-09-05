@@ -9,6 +9,7 @@ export const useAppStore = defineStore('app', () => {
   const wishlist = ref([])
   const monthlySummary = ref(null)
   const categoryStats = ref({})
+  const categories = ref([])
   const loading = ref(false)
   const error = ref(null)
   const budgets = ref({})
@@ -69,6 +70,7 @@ export const useAppStore = defineStore('app', () => {
       wishlist.value = await api.getWishlist()
       monthlySummary.value = await api.getMonthSummary()
       categoryStats.value = await api.getCategoryStats()
+      categories.value = await api.getCategories()
     } catch (e) {
       error.value = e.message
       console.error(e)
@@ -98,6 +100,7 @@ export const useAppStore = defineStore('app', () => {
     wishlist,
     monthlySummary,
     categoryStats,
+    categories,
     loading,
     error,
     budgets,

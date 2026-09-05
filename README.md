@@ -31,7 +31,7 @@ PWA（手机只读）  ←→  GitHub API（匿名只读 / 可选 token）
 
 | 层 | 技术 |
 |----|------|
-| MCP server | Python + fastmcp（10 个记账工具） |
+| MCP server | Python + fastmcp（13 个记账工具） |
 | 存储 | GitHub 私有仓库 JSON（GitHub Contents API） |
 | 前端 | Vue 3 + Vite + PWA + ECharts |
 | 部署 | GitHub Actions → GitHub Pages |
@@ -78,7 +78,7 @@ tests/      单元测试
 ## 进度
 
 - ✅ 数据层（GitHub API 读写 + 冲突处理 + 余额计算）
-- ✅ MCP server（10 个记账工具 + 自然语言解析）
+- ✅ MCP server（13 个记账工具 + 自然语言解析）
 - ✅ PWA 前端（6 页面 + 黑白风 + 离线缓存）
 - ✅ 优化（预算管理 + 月报分享图）
 - ✅ 已上线

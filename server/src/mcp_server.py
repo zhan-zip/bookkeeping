@@ -9,8 +9,9 @@ from src.storage import (
     get_category_stats, get_budget_status, add_wish, get_wishlist,
     buy_wish, get_monthly_report, ensure_monthly_allowance,
     get_expense, delete_expense, update_expense,
+    get_categories, add_category, delete_category,
 )
-from src.models import ExpenseType, CATEGORIES
+from src.models import ExpenseType, CATEGORIES, get_categories as get_categories_model
 
 mcp = FastMCP("Bookkeeping MCP Server")
 
@@ -226,6 +227,98 @@ def buy_wish_tool(wish_id: str, category: str, note: str = None) -> dict:
 def get_monthly_report_tool() -> dict:
     """获取月报数据（含所有细节）"""
     return get_monthly_report()
+
+
+@mcp.tool()
+def push_monthly_report_tool(month: str = None) -> dict:
+    """生成并格式化月报文本，供机器人推送给用户（QQ 群/私聊）
+    
+    Args:
+        month: 目标月份 YYYY-MM，默认当前月
+    """
+    report = get_monthly_report(month)
+    text = _format_monthly_report_text(report)
+    return {
+        "month": report["month"],
+        "text": text,
+        "raw": report,
+    }
+
+
+def _format_monthly_report_text(report: dict) -> str:
+    """将月报数据格式化为可阅读的文本"""
+    lines = []
+    lines.append(f"📊 {report['month']} 月报")
+    lines.append("─" * 20)
+    
+    # 收支概览
+    lines.append(f"💰 期初生活费：¥{report['allowance']:.2f}")
+    lines.append(f"📥 名义收入：¥{report['nominal_income']:.2f}  （含 AA 回款 ¥{report['aa_return']:.2f}）")
+    lines.append(f"📤 名义支出：¥{report['nominal_expense']:.2f}  （含 AA 垫付 ¥{report['aa_advance']:.2f}）")
+    lines.append(f"📈 实际收入：¥{report['actual_income']:.2f}")
+    lines.append(f"📉 实际支出：¥{report['actual_expense']:.2f}")
+    lines.append("")
+    
+    # 结余
+    balance_emoji = "🟢" if report['final_balance'] >= 0 else "🔴"
+    lines.append(f"{balance_emoji} 期末余额：¥{report['final_balance']:.2f}")
+    if report['saved_this_month'] > 0:
+        lines.append(f"💾 本月存下：¥{report['saved_this_month']:.2f}")
+    if report['overspent'] > 0:
+        lines.append(f"⚠️ 超支金额：¥{report['overspent']:.2f}")
+    lines.append("")
+    
+    # 心愿清单
+    lines.append(f"🎁 心愿清单：{report['wishlist_count']} 件 共 ¥{report['wishlist_total']:.2f}")
+    lines.append("")
+    
+    # 分类占比
+    if report['category_stats']:
+        lines.append("📂 分类支出：")
+        for cat, amt in sorted(report['category_stats'].items(), key=lambda x: -x[1]):
+            pct = (amt / report['actual_expense'] * 100) if report['actual_expense'] > 0 else 0
+            lines.append(f"  {cat}：¥{amt:.2f} ({pct:.1f}%)")
+        lines.append("")
+    
+    # 明细（最近 10 条）
+    records = report['records'][-10:] if report['records'] else []
+    if records:
+        lines.append("📝 近期流水（最近 10 笔）：")
+        for r in reversed(records):
+            type_emoji = {"expense": "💸", "income": "💰", "aa_advance": "🤝", "aa_return": "🤝"}.get(r['type'], "📌")
+            sign = "+" if r['type'] in ("income", "aa_return") else "-"
+            lines.append(f"  {type_emoji} {r['date']} {sign}¥{r['amount']:.2f} [{r['category']}] {r['note']} 余额¥{r['balance_after']:.2f}")
+    else:
+        lines.append("📝 本月暂无流水")
+    
+    return "\n".join(lines)
+
+
+@mcp.tool()
+def list_categories_tool() -> dict:
+    """获取所有分类列表"""
+    categories = get_categories()
+    return {"categories": categories}
+
+
+@mcp.tool()
+def add_category_tool(name: str) -> dict:
+    """新增分类（去重、去空、长度限制）
+    
+    Args:
+        name: 分类名称（1-10 字符）
+    """
+    return add_category(name)
+
+
+@mcp.tool()
+def delete_category_tool(name: str) -> dict:
+    """删除分类（内置 8 类受保护不可删）
+    
+    Args:
+        name: 要删除的分类名称
+    """
+    return delete_category(name)
 
 
 @mcp.tool()

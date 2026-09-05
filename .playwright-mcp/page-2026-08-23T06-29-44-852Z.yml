@@ -1,0 +1,142 @@
+- generic [ref=f16e2]:
+  - generic [ref=f16e3]:
+    - link "Skip to content" [ref=f16e4] [cursor=pointer]:
+      - /url: "#start-of-content"
+    - banner "Global navigation menu" [ref=f16e8]:
+      - generic [ref=f16e9]:
+        - generic [ref=f16e10]:
+          - button "Open menu" [ref=f16e12] [cursor=pointer]
+          - link "Homepage (g then d)" [ref=f16e15] [cursor=pointer]:
+            - /url: /
+        - generic [ref=f16e18]:
+          - navigation "Breadcrumbs" [ref=f16e19]:
+            - list [ref=f16e20]:
+              - listitem [ref=f16e21]:
+                - link "zhan-zip" [ref=f16e22] [cursor=pointer]:
+                  - /url: /zhan-zip
+              - listitem [ref=f16e24]:
+                - link "bookkeeping" [ref=f16e25] [cursor=pointer]:
+                  - /url: /zhan-zip/bookkeeping
+                - button "Switch repository (alt shift r)" [ref=f16e26] [cursor=pointer]
+          - button "Open quick search dialog, type / to search (forward slash)" [ref=f16e29] [cursor=pointer]
+        - generic [ref=f16e32]:
+          - link "You have unread notifications (g then n)" [ref=f16e186] [cursor=pointer]:
+            - /url: /notifications
+          - button "Open user navigation menu" [ref=f16e37] [cursor=pointer]:
+            - img "User avatar" [ref=f16e38]
+      - heading "Repository navigation" [level=2] [ref=f16e39]
+      - navigation "Repository" [ref=f16e40]:
+        - list [ref=f16e41]:
+          - listitem [ref=f16e42]:
+            - link "Code" [ref=f16e43] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping
+          - listitem [ref=f16e45]:
+            - link "Issues" [ref=f16e46] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping/issues
+          - listitem [ref=f16e48]:
+            - link "Pull requests" [ref=f16e49] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping/pulls
+          - listitem [ref=f16e51]:
+            - link "Actions" [ref=f16e52] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping/actions
+          - listitem [ref=f16e54]:
+            - link "Projects" [ref=f16e55] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping/projects
+        - button "More items" [ref=f16e68] [cursor=pointer]:
+          - generic [ref=f16e71]:
+            - text: More
+            - generic [ref=f16e72]: items
+  - main [ref=f16e76]:
+    - generic [ref=f16e82]:
+      - generic [ref=f16e188]:
+        - link "Deploy to GitHub Pages" [ref=f16e191] [cursor=pointer]:
+          - /url: /zhan-zip/bookkeeping/actions/workflows/deploy.yml
+        - generic [ref=f16e195]:
+          - generic [ref=f16e196]:
+            - img "currently running:" [ref=f16e201]
+            - 'heading "Deploy to GitHub Pages #6" [level=1] [ref=f16e205]'
+          - group [ref=f16e209]:
+            - img "Show options" [ref=f16e211] [cursor=pointer]
+        - button [ref=f16e214] [cursor=pointer]:
+          - heading "Summary" [level=2] [ref=f16e218]
+      - generic [ref=f16e118]:
+        - region "Workflow run summary" [ref=f16e222]:
+          - generic [ref=f16e223]:
+            - generic [ref=f16e224]:
+              - generic [ref=f16e225]: Manually triggered August 23, 2026 14:29now
+              - generic [ref=f16e226]:
+                - link [ref=f16e227] [cursor=pointer]:
+                  - /url: /zhan-zip
+                  - img "@zhan-zip" [ref=f16e228]
+                  - text: zhan-zip
+                - generic [ref=f16e229]:
+                  - text: ⁠
+                  - link "f84e41c" [ref=f16e230] [cursor=pointer]:
+                    - /url: /zhan-zip/bookkeeping/commit/f84e41ca6bb7fca2beb130dda85a3a025d705dce
+                - link "main" [ref=f16e233] [cursor=pointer]:
+                  - /url: /zhan-zip/bookkeeping/tree/refs/heads/main
+            - generic [ref=f16e235]:
+              - generic [ref=f16e236]: Status
+              - text: In progress
+            - generic [ref=f16e237]:
+              - generic [ref=f16e238]: Total duration
+              - link "–" [ref=f16e239] [cursor=pointer]:
+                - /url: /zhan-zip/bookkeeping/actions/runs/32623040476/usage
+            - generic [ref=f16e240]:
+              - generic [ref=f16e241]: Artifacts
+              - link "1" [ref=f16e242] [cursor=pointer]:
+                - /url: "#artifacts"
+        - region "Workflow run graph" [ref=f16e139]:
+          - generic [ref=f16e141]:
+            - generic [ref=f16e143]:
+              - heading [level=2] [ref=f16e144]:
+                - link "deploy.yml" [ref=f16e145] [cursor=pointer]:
+                  - /url: /zhan-zip/bookkeeping/actions/runs/32623040476/workflow
+              - generic [ref=f16e146]: "on: workflow_dispatch"
+            - generic [ref=f16e148]:
+              - generic [ref=f16e149]:
+                - 'link "completed successfully: build 22s" [ref=f16e244] [cursor=pointer]':
+                  - /url: /zhan-zip/bookkeeping/actions/runs/32623040476/job/97154067392
+                  - generic [ref=f16e246]:
+                    - img "completed successfully:" [ref=f16e248]
+                    - generic [ref=f16e250]: build
+                    - generic [ref=f16e252]: 22s
+                - generic [ref=f16e253]:
+                  - 'link "currently running: deploy 10s" [ref=f16e254] [cursor=pointer]':
+                    - /url: /zhan-zip/bookkeeping/actions/runs/32623040476/job/97154114271
+                    - generic [ref=f16e256]:
+                      - img "currently running:" [ref=f16e259]
+                      - generic [ref=f16e263]: deploy
+                      - generic "Aug 23, 2026, 14:29 GMT+8" [ref=f16e266]: 10s
+                  - generic [ref=f16e267]: Deploying to github-pages
+              - generic [ref=f16e172]:
+                - paragraph [ref=f16e173]: Oh hello! Nice to see you.
+                - paragraph [ref=f16e174]:
+                  - text: Made with ❤️ by
+                  - link [ref=f16e175] [cursor=pointer]:
+                    - /url: https://actions.github.io/humans.txt
+                    - text: humans.txt
+            - generic [ref=f16e176]:
+              - button "Fit to window" [disabled] [ref=f16e177]
+              - generic [ref=f16e178]:
+                - button "Zoom out" [disabled] [ref=f16e180]
+                - button "Zoom in" [ref=f16e182] [cursor=pointer]
+        - region "Annotations" [ref=f16e272]:
+          - generic [ref=f16e273]:
+            - generic [ref=f16e275]:
+              - heading "Annotations" [level=2] [ref=f16e276]
+              - generic [ref=f16e277]: 1 warning
+            - table [ref=f16e278]:
+              - rowgroup [ref=f16e279]:
+                - row [ref=f16e280]:
+                  - cell [ref=f16e281]:
+                    - generic [ref=f16e286]:
+                      - link [ref=f16e287] [cursor=pointer]:
+                        - /url: /zhan-zip/bookkeeping/actions/runs/32623040476/job/97154067392#step:13:2
+                        - strong [ref=f16e288]: build
+                      - generic [ref=f16e289]:
+                        - generic [ref=f16e291]:
+                          - text: "Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4, actions/upload-artifact@v4. For more information see:"
+                          - link "https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/" [ref=f16e292] [cursor=pointer]:
+                            - /url: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+                        - button "Show more" [ref=f16e293] [cursor=pointer]

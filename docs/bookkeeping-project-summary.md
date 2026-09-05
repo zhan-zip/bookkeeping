@@ -44,7 +44,7 @@ PWA（手机只读）  QQ 机器人（记账 MCP）
 
 **内容：**
 - 独立 MCP server 进程（stdio 模式，供 qq-agent 接入）
-- 暴露 10 个标准工具，直接调用 storage.py 核心逻辑
+- 暴露 13 个标准工具，直接调用 storage.py 核心逻辑
 - fastmcp 实现，零配置即用
 
 ---
@@ -127,16 +127,16 @@ PWA（手机只读）  QQ 机器人（记账 MCP）
 
 **实施内容：**
 1. 安装 `fastmcp` 依赖
-2. 编写 `server/src/mcp_server.py`，暴露 10 个标准工具
+2. 编写 `server/src/mcp_server.py`，暴露 13 个标准工具
 3. 工具直接调用 `storage.py` 现有函数，无重复逻辑
 4. 支持 stdio 传输，qq-agent 可直接接入
 
 **新增文件：**
 | 文件 | 类型 | 说明 |
 |------|------|------|
-| `server/src/mcp_server.py` | 新增 | MCP Server 入口，10 个工具 |
+| `server/src/mcp_server.py` | 新增 | MCP Server 入口，13 个工具 |
 
-**暴露的 10 个工具：**
+**暴露的 13 个工具：**
 | 工具 | 对应 storage 函数 | 说明 |
 |------|------------------|------|
 | `add_expense_tool` | `add_expense` | 记一笔（自动算余额） |
@@ -149,6 +149,12 @@ PWA（手机只读）  QQ 机器人（记账 MCP）
 | `get_monthly_report_tool` | `get_monthly_report` | 月报完整数据 |
 | `ensure_allowance_tool` | `ensure_monthly_allowance` | 确保本月有期初生活费 |
 | `parse_expense_text_tool` | `parse_expense_text` | 自然语言解析"午饭25"等 |
+| `list_categories_tool` | `get_categories` | 获取所有分类（动态读取） |
+| `add_category_tool` | `add_category` | 新增分类（去重、长度限制） |
+| `delete_category_tool` | `delete_category` | 删除分类（内置 8 类受保护） |
+| `delete_expense_tool` | `delete_expense` | 删除流水（自动重算余额） |
+| `update_expense_tool` | `update_expense` | 修改流水（部分字段，自动重算余额） |
+| `push_monthly_report_tool` | (内部 `_format_monthly_report_text`) | 生成月报推送文本 |
 
 **验证结果：** ✅ 导入正常，工具注册完整
 

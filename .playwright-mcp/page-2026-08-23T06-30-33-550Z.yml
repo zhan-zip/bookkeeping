@@ -1,0 +1,15 @@
+- generic [ref=f18e3]:
+  - navigation "主导航":
+    - button "总览"
+    - button "流水"
+    - button "心愿"
+    - button "月报"
+    - button "预算"
+  - generic [ref=f18e4]:
+    - heading "流水记录" [level=1] [ref=f18e5]
+    - generic [ref=f18e6]:
+      - paragraph [ref=f18e7]: 请先在设置中配置 GitHub Token
+      - link "去设置" [ref=f18e8] [cursor=pointer]:
+        - /url: /bookkeeping/settings
+  - button "打开菜单" [ref=f18e9] [cursor=pointer]
+  - status

@@ -1,0 +1,154 @@
+- generic [ref=f5e2]:
+  - generic [ref=f5e3]:
+    - link "Skip to content" [ref=f5e4] [cursor=pointer]:
+      - /url: "#start-of-content"
+    - banner "Global navigation menu" [ref=f5e8]:
+      - generic [ref=f5e9]:
+        - generic [ref=f5e10]:
+          - button "Open menu" [ref=f5e12] [cursor=pointer]
+          - link "Homepage (g then d)" [ref=f5e15] [cursor=pointer]:
+            - /url: /
+        - generic [ref=f5e18]:
+          - navigation "Breadcrumbs" [ref=f5e19]:
+            - list [ref=f5e20]:
+              - listitem [ref=f5e21]:
+                - link "zhan-zip" [ref=f5e22] [cursor=pointer]:
+                  - /url: /zhan-zip
+              - listitem [ref=f5e24]:
+                - link "bookkeeping" [ref=f5e25] [cursor=pointer]:
+                  - /url: /zhan-zip/bookkeeping
+                - button "Switch repository (alt shift r)" [ref=f5e26] [cursor=pointer]
+          - button "Open quick search dialog, type / to search (forward slash)" [ref=f5e29] [cursor=pointer]
+        - generic [ref=f5e32]:
+          - link "You have no unread notifications (g then n)" [ref=f5e33] [cursor=pointer]:
+            - /url: /notifications
+          - button "Open user navigation menu" [ref=f5e37] [cursor=pointer]:
+            - img "User avatar" [ref=f5e38]
+      - heading "Repository navigation" [level=2] [ref=f5e39]
+      - navigation "Repository" [ref=f5e40]:
+        - list [ref=f5e41]:
+          - listitem [ref=f5e42]:
+            - link "Code" [ref=f5e43] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping
+          - listitem [ref=f5e45]:
+            - link "Issues" [ref=f5e46] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping/issues
+          - listitem [ref=f5e48]:
+            - link "Pull requests" [ref=f5e49] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping/pulls
+          - listitem [ref=f5e51]:
+            - link "Actions" [ref=f5e52] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping/actions
+          - listitem [ref=f5e54]:
+            - link "Projects" [ref=f5e55] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping/projects
+          - listitem [ref=f5e57]:
+            - link "Security and quality" [ref=f5e58] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping/security
+          - listitem [ref=f5e60]:
+            - link "Insights" [ref=f5e61] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping/pulse
+          - listitem [ref=f5e63]:
+            - link "Settings" [ref=f5e64] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping/settings
+        - button "More items" [ref=f5e68] [cursor=pointer]:
+          - generic [ref=f5e71]:
+            - text: More
+            - generic [ref=f5e72]: items
+  - main [ref=f5e76]:
+    - generic [ref=f5e78]:
+      - 'heading "Actions: zhan-zip/bookkeeping" [level=1] [ref=f5e79]'
+      - generic [ref=f5e85]:
+        - generic [ref=f5e86]:
+          - generic [ref=f5e87]:
+            - heading [level=2] [ref=f5e89]:
+              - button [ref=f5e91] [cursor=pointer]:
+                - heading "All workflows" [level=3] [ref=f5e92]
+            - link "New workflow" [ref=f5e97] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping/actions/new
+          - generic [ref=f5e98]: Showing runs from all workflows
+          - search [ref=f5e101]:
+            - combobox "Filter workflow runs" [ref=f5e102]
+        - generic [ref=f5e105]:
+          - generic [ref=f5e110]:
+            - paragraph [ref=f5e111]: Help us improve GitHub Actions
+            - generic [ref=f5e112]: Tell us how to make GitHub Actions work better for you with three quick questions.
+          - generic [ref=f5e113]:
+            - button "Give feedback" [ref=f5e114] [cursor=pointer]
+            - button "Close GrowthBanner" [ref=f5e117] [cursor=pointer]
+        - strong [ref=f5e122]: 3 workflow runs
+        - generic [ref=f5e123]:
+          - generic [ref=f5e125]:
+            - button "Workflow" [ref=f5e129] [cursor=pointer]
+            - button "Event" [ref=f5e135] [cursor=pointer]
+            - button "Status" [ref=f5e141] [cursor=pointer]
+            - button "Branch" [ref=f5e147] [cursor=pointer]
+            - button "Actor" [ref=f5e153] [cursor=pointer]
+          - generic [ref=f5e156]:
+            - generic [ref=f5e158]:
+              - generic [ref=f5e159]:
+                - 'link "currently running: Run 2 of Deploy to GitHub Pages. ci: 修复 GitHub Pages 部署 - 移除环境保护限制" [ref=f5e160] [cursor=pointer]':
+                  - /url: /zhan-zip/bookkeeping/actions/runs/32621983140
+                  - img "currently running:" [ref=f5e163]
+                  - generic [ref=f5e167]: "ci: 修复 GitHub Pages 部署 - 移除环境保护限制"
+                - generic [ref=f5e168]:
+                  - text: "Deploy to GitHub Pages #2:"
+                  - generic [ref=f5e169]:
+                    - text: Commit
+                    - link "3beef6c" [ref=f5e170] [cursor=pointer]:
+                      - /url: /zhan-zip/bookkeeping/commit/3beef6c7dcc94a6ba6e8aa1ef289dd29fce861ae
+                    - text: pushed by
+                    - link "zhan-zip" [ref=f5e171] [cursor=pointer]:
+                      - /url: /zhan-zip
+                - generic [ref=f5e172]:
+                  - generic "Aug 23, 2026, 14:04 GMT+8" [ref=f5e177]: now
+                  - generic [ref=f5e178]: In progress
+                  - link "main" [ref=f5e181] [cursor=pointer]:
+                    - /url: /zhan-zip/bookkeeping/tree/refs/heads/main
+              - group [ref=f5e185]:
+                - img "Show options" [ref=f5e187] [cursor=pointer]
+            - generic [ref=f5e190]:
+              - generic [ref=f5e191]:
+                - 'link "failed: Run 1 of Deploy to GitHub Pages. ci: 添加 GitHub Pages 部署工作流" [ref=f5e192] [cursor=pointer]':
+                  - /url: /zhan-zip/bookkeeping/actions/runs/32621861512
+                  - img "failed:" [ref=f5e194]
+                  - generic [ref=f5e196]: "ci: 添加 GitHub Pages 部署工作流"
+                - generic [ref=f5e197]:
+                  - text: "Deploy to GitHub Pages #1:"
+                  - generic [ref=f5e198]:
+                    - text: Commit
+                    - link "cd151a2" [ref=f5e199] [cursor=pointer]:
+                      - /url: /zhan-zip/bookkeeping/commit/cd151a2e7580a629d2123f7c90a1385ec5e468e3
+                    - text: pushed by
+                    - link "zhan-zip" [ref=f5e200] [cursor=pointer]:
+                      - /url: /zhan-zip
+                - generic [ref=f5e201]:
+                  - generic "Aug 23, 2026, 14:01 GMT+8" [ref=f5e206]: 3 minutes ago
+                  - generic [ref=f5e207]:
+                    - img "Run duration" [ref=f5e208]
+                    - text: 28s
+                  - link "main" [ref=f5e210] [cursor=pointer]:
+                    - /url: /zhan-zip/bookkeeping/tree/refs/heads/main
+              - group [ref=f5e214]:
+                - img "Show options" [ref=f5e216] [cursor=pointer]
+            - generic [ref=f5e219]:
+              - generic [ref=f5e220]:
+                - 'link "completed successfully: Run 1 of pages-build-deployment. pages build and deployment" [ref=f5e221] [cursor=pointer]':
+                  - /url: /zhan-zip/bookkeeping/actions/runs/32095556207
+                  - img "completed successfully:" [ref=f5e223]
+                  - generic [ref=f5e225]: pages build and deployment
+                - generic [ref=f5e226]:
+                  - text: "pages-build-deployment #1:"
+                  - generic [ref=f5e227]:
+                    - text: by
+                    - link "zhan-zip" [ref=f5e228] [cursor=pointer]:
+                      - /url: /zhan-zip
+                - generic [ref=f5e229]:
+                  - generic "Aug 18, 2026, 11:27 GMT+8" [ref=f5e234]: Aug 18, 11:27 GMT+8
+                  - generic [ref=f5e235]:
+                    - img "Run duration" [ref=f5e236]
+                    - text: 51s
+                  - link "gh-pages" [ref=f5e238] [cursor=pointer]:
+                    - /url: /zhan-zip/bookkeeping/tree/refs/heads/gh-pages
+              - group [ref=f5e242]:
+                - img "Show options" [ref=f5e244] [cursor=pointer]

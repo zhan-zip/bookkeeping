@@ -1,0 +1,203 @@
+- generic [ref=f15e2]:
+  - generic [ref=f15e3]:
+    - link "Skip to content" [ref=f15e4] [cursor=pointer]:
+      - /url: "#start-of-content"
+    - banner "Global navigation menu" [ref=f15e8]:
+      - generic [ref=f15e9]:
+        - generic [ref=f15e10]:
+          - button "Open menu" [ref=f15e12] [cursor=pointer]
+          - link "Homepage (g then d)" [ref=f15e15] [cursor=pointer]:
+            - /url: /
+        - generic [ref=f15e18]:
+          - navigation "Breadcrumbs" [ref=f15e19]:
+            - list [ref=f15e20]:
+              - listitem [ref=f15e21]:
+                - link "zhan-zip" [ref=f15e22] [cursor=pointer]:
+                  - /url: /zhan-zip
+              - listitem [ref=f15e24]:
+                - link "bookkeeping" [ref=f15e25] [cursor=pointer]:
+                  - /url: /zhan-zip/bookkeeping
+                - button "Switch repository (alt shift r)" [ref=f15e26] [cursor=pointer]
+          - button "Open quick search dialog, type / to search (forward slash)" [ref=f15e29] [cursor=pointer]
+        - generic [ref=f15e32]:
+          - link "You have unread notifications (g then n)" [ref=f15e304] [cursor=pointer]:
+            - /url: /notifications
+          - button "Open user navigation menu" [ref=f15e37] [cursor=pointer]:
+            - img "User avatar" [ref=f15e38]
+      - heading "Repository navigation" [level=2] [ref=f15e39]
+      - navigation "Repository" [ref=f15e40]:
+        - list [ref=f15e41]:
+          - listitem [ref=f15e42]:
+            - link "Code" [ref=f15e43] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping
+          - listitem [ref=f15e45]:
+            - link "Issues" [ref=f15e46] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping/issues
+          - listitem [ref=f15e48]:
+            - link "Pull requests" [ref=f15e49] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping/pulls
+          - listitem [ref=f15e51]:
+            - link "Actions" [ref=f15e52] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping/actions
+          - listitem [ref=f15e54]:
+            - link "Projects" [ref=f15e55] [cursor=pointer]:
+              - /url: /zhan-zip/bookkeeping/projects
+        - button "More items" [ref=f15e68] [cursor=pointer]:
+          - generic [ref=f15e71]:
+            - text: More
+            - generic [ref=f15e72]: items
+  - main [ref=f15e76]:
+    - generic [ref=f15e78]:
+      - 'heading "Actions: zhan-zip/bookkeeping" [level=1] [ref=f15e79]'
+      - generic [ref=f15e85]:
+        - generic [ref=f15e86]:
+          - generic [ref=f15e87]:
+            - heading [level=2] [ref=f15e89]:
+              - button [ref=f15e91] [cursor=pointer]:
+                - heading "Deploy to GitHub Pages" [level=3] [ref=f15e92]
+            - button "Show workflow options" [ref=f15e98] [cursor=pointer]
+          - link "deploy.yml" [ref=f15e100] [cursor=pointer]:
+            - /url: /zhan-zip/bookkeeping/blob/main/.github/workflows/deploy.yml
+          - search [ref=f15e103]:
+            - combobox "Filter workflow runs" [ref=f15e104]
+        - generic [ref=f15e107]:
+          - generic [ref=f15e112]:
+            - paragraph [ref=f15e113]: Help us improve GitHub Actions
+            - generic [ref=f15e114]: Tell us how to make GitHub Actions work better for you with three quick questions.
+          - generic [ref=f15e115]:
+            - button "Give feedback" [ref=f15e116] [cursor=pointer]
+            - button "Close GrowthBanner" [ref=f15e119] [cursor=pointer]
+        - strong [ref=f15e124]: 5 workflow runs
+        - generic [ref=f15e125]:
+          - generic [ref=f15e127]:
+            - button "Event" [ref=f15e131] [cursor=pointer]
+            - button "Status" [ref=f15e137] [cursor=pointer]
+            - button "Branch" [ref=f15e143] [cursor=pointer]
+            - button "Actor" [ref=f15e149] [cursor=pointer]
+          - generic [ref=f15e152]:
+            - generic [ref=f15e153]: This workflow has a workflow_dispatch event trigger.
+            - group [ref=f15e154]:
+              - generic "Run workflow" [active] [ref=f15e155] [cursor=pointer]
+              - generic [ref=f15e306]:
+                - generic [ref=f15e309]:
+                  - generic [ref=f15e310]: Use workflow from
+                  - group [ref=f15e311]:
+                    - 'generic "Branch: main" [ref=f15e312] [cursor=pointer]':
+                      - text: "Branch:"
+                      - generic [ref=f15e313]: main
+                - button "Run workflow" [ref=f15e317] [cursor=pointer]
+          - generic [ref=f15e157]:
+            - generic [ref=f15e159]:
+              - generic [ref=f15e160]:
+                - 'link "failed: Run 5 of Deploy to GitHub Pages." [ref=f15e161] [cursor=pointer]':
+                  - /url: /zhan-zip/bookkeeping/actions/runs/32622722955
+                  - img "failed:" [ref=f15e163]
+                  - generic [ref=f15e165]: Deploy to GitHub Pages
+                - generic [ref=f15e166]:
+                  - text: "Deploy to GitHub Pages #5:"
+                  - generic [ref=f15e167]:
+                    - text: Manually run by
+                    - link "zhan-zip" [ref=f15e168] [cursor=pointer]:
+                      - /url: /zhan-zip
+                - generic [ref=f15e169]:
+                  - generic "Aug 23, 2026, 14:21 GMT+8" [ref=f15e174]: 6 minutes ago
+                  - generic [ref=f15e175]:
+                    - img "Run duration" [ref=f15e176]
+                    - text: 33s
+                  - link "main" [ref=f15e178] [cursor=pointer]:
+                    - /url: /zhan-zip/bookkeeping/tree/refs/heads/main
+              - group [ref=f15e182]:
+                - img "Show options" [ref=f15e184] [cursor=pointer]
+            - generic [ref=f15e187]:
+              - generic [ref=f15e188]:
+                - 'link "failed: Run 4 of Deploy to GitHub Pages. ci: 修复 GitHub Pages 部署 - 加回 environment 配置" [ref=f15e189] [cursor=pointer]':
+                  - /url: /zhan-zip/bookkeeping/actions/runs/32622672902
+                  - img "failed:" [ref=f15e191]
+                  - generic [ref=f15e193]: "ci: 修复 GitHub Pages 部署 - 加回 environment 配置"
+                - generic [ref=f15e194]:
+                  - text: "Deploy to GitHub Pages #4:"
+                  - generic [ref=f15e195]:
+                    - text: Commit
+                    - link "f84e41c" [ref=f15e196] [cursor=pointer]:
+                      - /url: /zhan-zip/bookkeeping/commit/f84e41ca6bb7fca2beb130dda85a3a025d705dce
+                    - text: pushed by
+                    - link "zhan-zip" [ref=f15e197] [cursor=pointer]:
+                      - /url: /zhan-zip
+                - generic [ref=f15e198]:
+                  - generic "Aug 23, 2026, 14:20 GMT+8" [ref=f15e203]: 8 minutes ago
+                  - generic [ref=f15e204]:
+                    - img "Run duration" [ref=f15e205]
+                    - text: 30s
+                  - link "main" [ref=f15e207] [cursor=pointer]:
+                    - /url: /zhan-zip/bookkeeping/tree/refs/heads/main
+              - group [ref=f15e211]:
+                - img "Show options" [ref=f15e213] [cursor=pointer]
+            - generic [ref=f15e216]:
+              - generic [ref=f15e217]:
+                - 'link "failed: Run 3 of Deploy to GitHub Pages." [ref=f15e218] [cursor=pointer]':
+                  - /url: /zhan-zip/bookkeeping/actions/runs/32622613536
+                  - img "failed:" [ref=f15e220]
+                  - generic [ref=f15e222]: Deploy to GitHub Pages
+                - generic [ref=f15e223]:
+                  - text: "Deploy to GitHub Pages #3:"
+                  - generic [ref=f15e224]:
+                    - text: Manually run by
+                    - link "zhan-zip" [ref=f15e225] [cursor=pointer]:
+                      - /url: /zhan-zip
+                - generic [ref=f15e226]:
+                  - generic "Aug 23, 2026, 14:19 GMT+8" [ref=f15e231]: 9 minutes ago
+                  - generic [ref=f15e232]:
+                    - img "Run duration" [ref=f15e233]
+                    - text: 28s
+                  - link "main" [ref=f15e235] [cursor=pointer]:
+                    - /url: /zhan-zip/bookkeeping/tree/refs/heads/main
+              - group [ref=f15e239]:
+                - img "Show options" [ref=f15e241] [cursor=pointer]
+            - generic [ref=f15e244]:
+              - generic [ref=f15e245]:
+                - 'link "failed: Run 2 of Deploy to GitHub Pages. ci: 修复 GitHub Pages 部署 - 移除环境保护限制" [ref=f15e246] [cursor=pointer]':
+                  - /url: /zhan-zip/bookkeeping/actions/runs/32621983140
+                  - img "failed:" [ref=f15e248]
+                  - generic [ref=f15e250]: "ci: 修复 GitHub Pages 部署 - 移除环境保护限制"
+                - generic [ref=f15e251]:
+                  - text: "Deploy to GitHub Pages #2:"
+                  - generic [ref=f15e252]:
+                    - text: Commit
+                    - link "3beef6c" [ref=f15e253] [cursor=pointer]:
+                      - /url: /zhan-zip/bookkeeping/commit/3beef6c7dcc94a6ba6e8aa1ef289dd29fce861ae
+                    - text: pushed by
+                    - link "zhan-zip" [ref=f15e254] [cursor=pointer]:
+                      - /url: /zhan-zip
+                - generic [ref=f15e255]:
+                  - generic "Aug 23, 2026, 14:04 GMT+8" [ref=f15e260]: 23 minutes ago
+                  - generic [ref=f15e261]:
+                    - img "Run duration" [ref=f15e262]
+                    - text: 33s
+                  - link "main" [ref=f15e264] [cursor=pointer]:
+                    - /url: /zhan-zip/bookkeeping/tree/refs/heads/main
+              - group [ref=f15e268]:
+                - img "Show options" [ref=f15e270] [cursor=pointer]
+            - generic [ref=f15e273]:
+              - generic [ref=f15e274]:
+                - 'link "failed: Run 1 of Deploy to GitHub Pages. ci: 添加 GitHub Pages 部署工作流" [ref=f15e275] [cursor=pointer]':
+                  - /url: /zhan-zip/bookkeeping/actions/runs/32621861512
+                  - img "failed:" [ref=f15e277]
+                  - generic [ref=f15e279]: "ci: 添加 GitHub Pages 部署工作流"
+                - generic [ref=f15e280]:
+                  - text: "Deploy to GitHub Pages #1:"
+                  - generic [ref=f15e281]:
+                    - text: Commit
+                    - link "cd151a2" [ref=f15e282] [cursor=pointer]:
+                      - /url: /zhan-zip/bookkeeping/commit/cd151a2e7580a629d2123f7c90a1385ec5e468e3
+                    - text: pushed by
+                    - link "zhan-zip" [ref=f15e283] [cursor=pointer]:
+                      - /url: /zhan-zip
+                - generic [ref=f15e284]:
+                  - generic "Aug 23, 2026, 14:01 GMT+8" [ref=f15e289]: 26 minutes ago
+                  - generic [ref=f15e290]:
+                    - img "Run duration" [ref=f15e291]
+                    - text: 28s
+                  - link "main" [ref=f15e293] [cursor=pointer]:
+                    - /url: /zhan-zip/bookkeeping/tree/refs/heads/main
+              - group [ref=f15e297]:
+                - img "Show options" [ref=f15e299] [cursor=pointer]

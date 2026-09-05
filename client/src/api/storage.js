@@ -2,6 +2,11 @@ import { getFile, putFile, ensureFile } from './github'
 
 const EXPENSES_PATH = 'data/expenses.json'
 const WISHLIST_PATH = 'data/wishlist.json'
+const CATEGORIES_PATH = 'data/categories.json'
+
+const DEFAULT_CATEGORIES = [
+  '技术', '学习', '吃饭', '零食', '购物', '生活', '社交', '出行'
+]
 
 function generateId() {
   return new Date().toISOString().replace(/[-:T.]/g, '').slice(0, 17)
@@ -53,6 +58,14 @@ async function saveWishlist(items, sha, message) {
   return putFile(WISHLIST_PATH, items, sha, message)
 }
 
+async function loadCategories() {
+  const data = await getFile(CATEGORIES_PATH)
+  if (data && Array.isArray(data.content)) {
+    return data.content
+  }
+  return DEFAULT_CATEGORIES
+}
+
 function computeBalance(records, upToIndex) {
   let balance = 0
   for (let i = 0; i <= upToIndex && i < records.length; i++) {
@@ -84,9 +97,9 @@ function getAllowanceRecord(records, dateStr) {
   return monthRecords.find(r => r.type === 'income' && r.category === '生活费' && r.note === '期初生活费')
 }
 
-export const CATEGORIES = [
-  '技术', '学习', '吃饭', '零食', '购物', '生活', '社交', '出行'
-]
+export async function getCategories() {
+  return loadCategories()
+}
 
 export async function ensureMonthlyAllowance() {
   const records = await loadExpenses()
@@ -114,9 +127,10 @@ export async function ensureMonthlyAllowance() {
 export async function addExpense(amount, category, note, expenseType = 'expense', date = null) {
   date = date || todayStr()
   const records = await loadExpenses()
+  const categories = await getCategories()
   
-  if (!CATEGORIES.includes(category) && expenseType !== 'income') {
-    throw new Error(`无效分类: ${category}，可选: ${CATEGORIES.join(', ')}`)
+  if (!categories.includes(category) && expenseType !== 'income') {
+    throw new Error(`无效分类: ${category}，可选: ${categories.join(', ')}`)
   }
   
   records.sort((a, b) => (a.date + a.created_at).localeCompare(b.date + b.created_at))
@@ -194,9 +208,10 @@ export async function getCategoryStats(dateStr = null) {
   dateStr = dateStr || todayStr()
   const records = await loadExpenses()
   const monthRecords = filterByMonth(records, dateStr)
+  const categories = await getCategories()
   
   const stats = {}
-  for (const cat of CATEGORIES) stats[cat] = 0
+  for (const cat of categories) stats[cat] = 0
   for (const r of monthRecords) {
     if (r.type === 'expense' || r.type === 'aa_advance') {
       stats[r.category] = (stats[r.category] || 0) + r.amount

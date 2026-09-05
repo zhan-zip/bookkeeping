@@ -1,0 +1,9 @@
+- generic [ref=f17e3]:
+  - navigation "主导航":
+    - button "总览"
+    - button "流水"
+    - button "心愿"
+    - button "月报"
+    - button "预算"
+  - button "打开菜单" [ref=f17e4] [cursor=pointer]
+  - status
