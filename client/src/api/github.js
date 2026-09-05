@@ -11,10 +11,14 @@ export function setToken(t) {
 }
 
 function getHeaders() {
-  return {
-    Authorization: `token ${token}`,
+  const headers = {
     Accept: 'application/vnd.github.v3+json',
   }
+  // 仓库公开时允许无 token 匿名只读（限速 60 次/小时）；有 token 则携带
+  if (token) {
+    headers.Authorization = `token ${token}`
+  }
+  return headers
 }
 
 export async function getFile(path) {

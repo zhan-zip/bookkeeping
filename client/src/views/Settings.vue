@@ -56,10 +56,10 @@ function clearToken() {
     <h1 class="page-title">设置</h1>
     
     <div class="card">
-      <div class="card-title">GitHub 配置</div>
+      <div class="card-title">GitHub 配置（可选）</div>
       <p style="font-size:13px; color:var(--color-text-secondary); margin-bottom:16px; line-height:1.6;">
-        请输入具有 <strong>repo</strong> 权限的 GitHub Personal Access Token。<br>
-        数据存储在私有仓库 <code>zhan-zip/bookkeeping</code> 的 <code>data/</code> 目录下。
+        仓库已公开，<strong>无需 Token 即可匿名查看</strong>（限速 60 次/小时，个人使用足够）。<br>
+        配置只读 Token 可解除限速；<strong>请勿在此填入写权限 Token</strong>。
       </p>
       
       <div class="form-group">
@@ -97,7 +97,7 @@ function clearToken() {
       </div>
       <div class="row">
         <span class="row-label">数据源</span>
-        <span class="row-value">GitHub 私有仓库</span>
+        <span class="row-value">GitHub 公开仓库</span>
       </div>
       <div class="row">
         <span class="row-label">记账入口</span>
@@ -112,7 +112,7 @@ function clearToken() {
     <div class="card">
       <div class="card-title">使用说明</div>
       <div style="font-size:13px; color:var(--color-text-secondary); line-height:1.8;">
-        <p style="margin-bottom:12px;"><strong>1. 配置 Token：</strong>在 GitHub Settings → Developer settings → Personal access tokens 生成 token，勾选 repo 权限。</p>
+        <p style="margin-bottom:12px;"><strong>1. 查看：</strong>打开本页即可匿名查看，无需配置。如遇限速（60 次/小时）可配只读 Token 解除。</p>
         <p style="margin-bottom:12px;"><strong>2. 记账：</strong>在 QQ 中对机器人说"午饭 25"或"买了键盘 499 购物"。</p>
         <p style="margin-bottom:12px;"><strong>3. 查看：</strong>打开本 PWA 查看总览、流水、心愿、月报。</p>
         <p style="margin-bottom:12px;"><strong>4. 心愿清单：</strong>想买的东西先放这里，真买了点"真买"转正式支出。</p>
