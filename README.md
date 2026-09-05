@@ -4,7 +4,7 @@
 
 ## 它是什么
 
-一个记账系统，记账通过 **MCP 服务** 完成——自然语言直接记账（"午饭25"、"买键盘499购物"），手机端 PWA 只读查看数据。数据存储在 GitHub 私有仓库的 JSON 文件中（通过 GitHub API 读写），无需自建数据库。
+一个记账系统，记账通过 **MCP 服务** 完成——自然语言直接记账（"午饭25"、"买键盘499购物"），手机端 PWA 只读查看数据。数据存储在 GitHub 公开仓库的 JSON 文件中（通过 GitHub API 读写），无需自建数据库。
 
 ## 核心功能
 
@@ -20,11 +20,11 @@
 ```
 QQ 机器人 / Agent  ←→  MCP server（记账工具）  ←→  GitHub API  ←→  data/expenses.json（唯一数据源）
         ↕
-PWA（手机只读）  ←→  GitHub API（只读 token）
+PWA（手机只读）  ←→  GitHub API（匿名只读 / 可选 token）
 ```
 
-- 数据源是 GitHub 私有仓库的 JSON 文件，通过 GitHub Contents API 读写（带 sha 防冲突）
-- 记账走 MCP（写 token），查看走 PWA（只读 token），权限分离
+- 数据源是 GitHub 公开仓库的 JSON 文件，通过 GitHub Contents API 读写（带 sha 防冲突）
+- 记账走 MCP（写 token），查看走 PWA（匿名只读，可选只读 token 解除限速），权限分离
 - 已部署到 GitHub Pages
 
 ## 技术栈
@@ -79,6 +79,6 @@ tests/      单元测试
 
 - ✅ 数据层（GitHub API 读写 + 冲突处理 + 余额计算）
 - ✅ MCP server（10 个记账工具 + 自然语言解析）
-- ✅ PWA 前端（5 页面 + 黑白风 + 离线缓存）
+- ✅ PWA 前端（6 页面 + 黑白风 + 离线缓存）
 - ✅ 优化（预算管理 + 月报分享图）
 - ✅ 已上线
