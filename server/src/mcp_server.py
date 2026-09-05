@@ -8,6 +8,7 @@ from src.storage import (
     add_expense, get_recent, get_today, get_month_summary,
     get_category_stats, get_budget_status, add_wish, get_wishlist,
     buy_wish, get_monthly_report, ensure_monthly_allowance,
+    get_expense, delete_expense, update_expense,
 )
 from src.models import ExpenseType, CATEGORIES
 
@@ -225,6 +226,181 @@ def buy_wish_tool(wish_id: str, category: str, note: str = None) -> dict:
 def get_monthly_report_tool() -> dict:
     """获取月报数据（含所有细节）"""
     return get_monthly_report()
+
+
+@mcp.tool()
+def delete_expense_tool(expense_id: str) -> dict:
+    """删除一笔流水（自动重算所有 balance_after）
+    
+    Args:
+        expense_id: 流水记录的 id（来自 get_recent_tool 或 add_expense_tool 的返回）
+    """
+    record = get_expense(expense_id)
+    if not record:
+        return {"error": f"流水不存在: {expense_id}"}
+    deleted = delete_expense(expense_id)
+    if not deleted:
+        return {"error": f"删除失败: {expense_id}"}
+    return {
+        "deleted": True,
+        "record": {
+            "id": record.id,
+            "type": record.type,
+            "amount": record.amount,
+            "category": record.category,
+            "note": record.note,
+            "date": record.date,
+        },
+    }
+
+
+@mcp.tool()
+def update_expense_tool(
+    expense_id: str,
+    amount: float = None,
+    category: str = None,
+    note: str = None,
+    date: str = None,
+    expense_type: str = None,
+) -> dict:
+    """修改一笔流水（金额/分类/备注/日期/类型），自动重算所有 balance_after
+    
+    Args:
+        expense_id: 流水记录的 id
+        amount: 新金额（可选）
+        category: 新分类（支出/AA 类型须在 8 类白名单；income 不校验）
+        note: 新备注（可选）
+        date: 新日期 YYYY-MM-DD（可选）
+        expense_type: 新类型 expense/income/aa_advance/aa_return（可选）
+    """
+    record = get_expense(expense_id)
+    if not record:
+        return {"error": f"流水不存在: {expense_id}"}
+    
+    updates = {}
+    if amount is not None:
+        if amount <= 0:
+            return {"error": "金额必须为正数"}
+        updates["amount"] = round(amount, 2)
+    if category is not None:
+        new_type = expense_type or record.type
+        if category not in CATEGORIES and new_type != "income":
+            return {"error": f"无效分类: {category}，可选: {CATEGORIES}"}
+        updates["category"] = category
+    if note is not None:
+        updates["note"] = note[:50]
+    if date is not None:
+        updates["date"] = date
+    if expense_type is not None:
+        if expense_type not in ("expense", "income", "aa_advance", "aa_return"):
+            return {"error": f"无效类型: {expense_type}，可选: expense/income/aa_advance/aa_return"}
+        updates["type"] = expense_type
+    
+    if not updates:
+        return {"error": "没有提供任何要修改的字段"}
+    
+    updated = update_expense(expense_id, **updates)
+    if not updated:
+        return {"error": f"修改失败: {expense_id}"}
+    return {
+        "updated": True,
+        "record": {
+            "id": updated.id,
+            "type": updated.type,
+            "amount": updated.amount,
+            "category": updated.category,
+            "note": updated.note,
+            "date": updated.date,
+            "balance_after": updated.balance_after,
+        },
+    }
+
+
+@mcp.tool()
+def delete_expense_tool(expense_id: str) -> dict:
+    """删除一笔流水（按 id），自动重算所有 balance_after
+
+    Args:
+        expense_id: 要删除的流水 id，形如 20260831-121530-3（可用 get_recent_tool 查到）
+    """
+    # 先取原记录用于返回
+    records = get_recent(1000)
+    target = next((r for r in records if r.id == expense_id), None)
+    if target is None:
+        return {"error": f"流水不存在: {expense_id}"}
+    deleted = delete_expense(expense_id)
+    if not deleted:
+        return {"error": f"流水不存在: {expense_id}"}
+    return {
+        "deleted": True,
+        "record": {
+            "id": target.id,
+            "type": target.type,
+            "amount": target.amount,
+            "category": target.category,
+            "note": target.note,
+            "date": target.date,
+            "balance_after": target.balance_after,
+        },
+    }
+
+
+@mcp.tool()
+def update_expense_tool(expense_id: str, amount: float = None, category: str = None,
+                        note: str = None, expense_type: str = None, date: str = None) -> dict:
+    """修改一笔流水（按 id），可改金额/分类/备注/类型/日期，自动重算所有 balance_after
+
+    Args:
+        expense_id: 要修改的流水 id，形如 20260831-121530-3（可用 get_recent_tool 查到）
+        amount: 新金额（可选，不传则不改）
+        category: 新分类（可选；支出/AA 类型须在 8 类白名单）
+        note: 新备注（可选）
+        expense_type: 新类型 expense/income/aa_advance/aa_return（可选）
+        date: 新日期 YYYY-MM-DD（可选）
+    """
+    updates = {}
+    if amount is not None:
+        if amount <= 0:
+            return {"error": "金额必须为正数"}
+        updates["amount"] = round(amount, 2)
+    if category is not None:
+        new_type = expense_type if expense_type is not None else None
+        if new_type is None:
+            records = get_recent(1000)
+            target = next((r for r in records if r.id == expense_id), None)
+            new_type = target.type if target else "expense"
+        if new_type != "income" and category not in CATEGORIES:
+            return {"error": f"无效分类: {category}，可选: {CATEGORIES}"}
+        updates["category"] = category
+    if note is not None:
+        updates["note"] = note[:50]
+    if expense_type is not None:
+        if expense_type not in ("expense", "income", "aa_advance", "aa_return"):
+            return {"error": "expense_type 必须是 expense/income/aa_advance/aa_return"}
+        updates["type"] = expense_type
+    if date is not None:
+        try:
+            datetime.strptime(date, "%Y-%m-%d")
+        except ValueError:
+            return {"error": "date 格式必须为 YYYY-MM-DD"}
+        updates["date"] = date
+    if not updates:
+        return {"error": "没有提供任何要修改的字段"}
+    updated = update_expense(expense_id, **updates)
+    if updated is None:
+        return {"error": f"流水不存在: {expense_id}"}
+    return {
+        "updated": True,
+        "record": {
+            "id": updated.id,
+            "type": updated.type,
+            "amount": updated.amount,
+            "category": updated.category,
+            "note": updated.note,
+            "date": updated.date,
+            "balance_after": updated.balance_after,
+        },
+    }
 
 
 @mcp.tool()

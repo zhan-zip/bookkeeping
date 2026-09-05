@@ -171,6 +171,12 @@ def get_today() -> List[ExpenseRecord]:
     return [r for r in records if r.date == today]
 
 
+def get_expense(expense_id: str) -> Optional[ExpenseRecord]:
+    """按 id 查找单笔流水，找不到返回 None"""
+    records, _ = _load_expenses()
+    return next((r for r in records if r.id == expense_id), None)
+
+
 def get_month_summary(date_str: str = None) -> dict:
     date_str = date_str or today_str()
     records, _ = _load_expenses()
